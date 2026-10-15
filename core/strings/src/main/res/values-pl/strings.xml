@@ -389,6 +389,8 @@
     <string name="settings.playback.auto_rewind.title">Automatyczne cofnięcie</string>
     <string name="settings.playback.lock_screen_slider.summary">Przewijaj rozdział z ekranu blokady i powiadomienia. Wyłącz go, żeby przypadkowy dotyk nie przesunął odtwarzania w inne miejsce.</string>
     <string name="settings.playback.lock_screen_slider.title">Suwak na ekranie blokady</string>
+    <string name="settings.playback.play_together.summary">Kontynuuj odtwarzanie, gdy inna aplikacja włącza dźwięk. Połączenia i alarmy także nie zatrzymają Voice.</string>
+    <string name="settings.playback.play_together.title">Odtwarzanie razem z innymi aplikacjami</string>
     <string name="settings.playback.seek_time.summary">O ile przewijają przyciski do tyłu i do przodu</string>
     <string name="settings.playback.seek_time.title">Przewiń o</string>
     <string name="settings.subtitle">Voice na twoją modłę</string>

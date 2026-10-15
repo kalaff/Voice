@@ -373,6 +373,8 @@
     <string name="settings.playback.auto_rewind.title">Derulare înapoi automată</string>
     <string name="settings.playback.lock_screen_slider.summary">Derulează prin capitol de pe ecranul de blocare și din notificare. Dezactiveaz-o, ca o atingere din greșeală să nu te mute de unde ai rămas.</string>
     <string name="settings.playback.lock_screen_slider.title">Bara de pe ecranul de blocare</string>
+    <string name="settings.playback.play_together.summary">Continuă redarea când o altă aplicație face sunet. Nici apelurile și alarmele nu vor opri Voice.</string>
+    <string name="settings.playback.play_together.title">Redă împreună cu alte aplicații</string>
     <string name="settings.playback.seek_time.summary">Cât de mult sar derularea înapoi și înainte</string>
     <string name="settings.playback.seek_time.title">Pas derulare</string>
     <string name="settings.subtitle">Fă Voice al tău</string>

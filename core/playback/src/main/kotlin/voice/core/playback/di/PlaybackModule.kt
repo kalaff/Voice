@@ -1,6 +1,7 @@
 package voice.core.playback.di
 
 import android.content.Context
+import androidx.datastore.core.DataStore
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
@@ -21,7 +22,12 @@ import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import voice.core.data.AUDIOBOOKSHELF_SCHEME
+import voice.core.data.store.PlayTogetherStore
 import voice.core.featureflag.FeatureFlag
 import voice.core.featureflag.Media3AudioOffloadFeatureFlagQualifier
 import voice.core.playback.history.AutomaticPauseRecorder
@@ -69,19 +75,27 @@ object PlaybackModule {
     automaticPauseRecorder: AutomaticPauseRecorder,
     listeningSessionRecorder: ListeningSessionRecorder,
     @Media3AudioOffloadFeatureFlagQualifier media3AudioOffloadFeatureFlag: FeatureFlag<Boolean>,
+    @PlayTogetherStore playTogetherStore: DataStore<Boolean>,
+    scope: CoroutineScope,
   ): ExoPlayer {
     val audioAttributes = AudioAttributes.Builder()
       .setContentType(C.AUDIO_CONTENT_TYPE_SPEECH)
       .setUsage(C.USAGE_MEDIA)
       .build()
+    val playTogether = runBlocking { playTogetherStore.data.first() }
 
     return ExoPlayer.Builder(context, onlyAudioRenderersFactory, mediaSourceFactory)
-      .setAudioAttributes(audioAttributes, true)
+      .setAudioAttributes(audioAttributes, !playTogether)
       .setHandleAudioBecomingNoisy(true)
       .setWakeMode(C.WAKE_MODE_LOCAL)
       .setMaxSeekToPreviousPositionMs(2_000)
       .build()
       .also { player ->
+        scope.launch {
+          playTogetherStore.data.distinctUntilChanged().collect { enabled ->
+            player.setAudioAttributes(audioAttributes, !enabled)
+          }
+        }
         if (media3AudioOffloadFeatureFlag.get()) {
           player.trackSelectionParameters = player.trackSelectionParameters
             .buildUpon()

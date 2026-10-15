@@ -389,6 +389,8 @@
     <string name="settings.playback.auto_rewind.title">Автоперемотка назад</string>
     <string name="settings.playback.lock_screen_slider.summary">Перематывайте главу с экрана блокировки и из уведомления. Отключите, чтобы случайное касание не уводило вас с места, где вы остановились.</string>
     <string name="settings.playback.lock_screen_slider.title">Ползунок на экране блокировки</string>
+    <string name="settings.playback.play_together.summary">Продолжает воспроизведение, когда звук издаёт другое приложение. Звонки и будильники тоже не ставят Voice на паузу.</string>
+    <string name="settings.playback.play_together.title">Воспроизведение вместе с другими приложениями</string>
     <string name="settings.playback.seek_time.summary">Насколько далеко перематывают кнопки назад и вперёд</string>
     <string name="settings.playback.seek_time.title">Интервал перемотки</string>
     <string name="settings.subtitle">Сделайте Voice своим</string>

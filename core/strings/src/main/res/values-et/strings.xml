@@ -357,6 +357,8 @@
     <string name="settings.playback.auto_rewind.title">Automaatne tagasikerimine</string>
     <string name="settings.playback.lock_screen_slider.summary">Keri peatükis lukustuskuvalt ja teavitusest. Lülita see välja, et juhuslik puudutus sind järjest välja ei viiks.</string>
     <string name="settings.playback.lock_screen_slider.title">Liugur lukustuskuval</string>
+    <string name="settings.playback.play_together.summary">Jätkab esitust, kui mõni muu rakendus heli teeb. Kõned ja äratused ei peata Voice\'i ka.</string>
+    <string name="settings.playback.play_together.title">Esita koos teiste rakendustega</string>
     <string name="settings.playback.seek_time.summary">Kui kaugele tagasi- ja edasikerimine hüppavad</string>
     <string name="settings.playback.seek_time.title">Kerimise samm</string>
     <string name="settings.subtitle">Tee Voice enda omaks</string>

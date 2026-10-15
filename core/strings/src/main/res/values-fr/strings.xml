@@ -373,6 +373,8 @@
     <string name="settings.playback.auto_rewind.title">Rembobinage automatique</string>
     <string name="settings.playback.lock_screen_slider.summary">Parcourez le chapitre depuis l\'écran de verrouillage et la notification. Désactivez-le pour qu\'un effleurement accidentel ne vous éloigne pas de là où vous en étiez.</string>
     <string name="settings.playback.lock_screen_slider.title">Curseur sur l\'écran de verrouillage</string>
+    <string name="settings.playback.play_together.summary">Continuez la lecture quand une autre application produit du son. Les appels et les alarmes ne mettront Voice non plus en pause.</string>
+    <string name="settings.playback.play_together.title">Lire en même temps que les autres applications</string>
     <string name="settings.playback.seek_time.summary">De combien le retour et l\'avance rapide sautent</string>
     <string name="settings.playback.seek_time.title">Sauter de</string>
     <string name="settings.subtitle">Faites de Voice le vôtre</string>
