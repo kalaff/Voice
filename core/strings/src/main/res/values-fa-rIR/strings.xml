@@ -20,6 +20,7 @@
     <string name="audiobookshelf.login.error.certificate">گوشی شما به گواهی این سرور اعتماد ندارد.</string>
     <string name="audiobookshelf.login.error.credentials">نام کاربری یا رمز عبور درست نیست.</string>
     <string name="audiobookshelf.login.error.failed">ورود انجام نشد. دوباره امتحان کنید.</string>
+    <string name="audiobookshelf.login.error.local_network">Voice برای دسترسی به شبکهٔ محلی به مجوز نیاز دارد. برای اتصال به این سرور، در تنظیمات دستگاه خود به آن مجوز دهید.</string>
     <string name="audiobookshelf.login.error.not_found">Voice نمی‌تواند در این نشانی سرور Audiobookshelf را پیدا کند. به شبکهٔ درست وصل هستید؟</string>
     <string name="audiobookshelf.login.error.not_set_up">این سرور هنوز راه‌اندازی نشده است. اول راه‌اندازی را در نسخهٔ وب آن تمام کنید.</string>
     <string name="audiobookshelf.login.error.other_account">این حساب دیگری است. برای تغییر حساب، اول از حساب خارج شوید.</string>

@@ -21,6 +21,7 @@
     <string name="audiobookshelf.login.error.certificate">O seu telemóvel não confia no certificado deste servidor.</string>
     <string name="audiobookshelf.login.error.credentials">O nome de utilizador ou a palavra-passe não estão corretos.</string>
     <string name="audiobookshelf.login.error.failed">Não foi possível iniciar sessão. Tente novamente.</string>
+    <string name="audiobookshelf.login.error.local_network">O Voice precisa de permissão para aceder à rede local. Conceda a permissão nas definições do dispositivo para se ligar a este servidor.</string>
     <string name="audiobookshelf.login.error.not_found">O Voice não encontra nenhum servidor Audiobookshelf nesse endereço. Está na rede certa?</string>
     <string name="audiobookshelf.login.error.not_set_up">Este servidor ainda não está configurado. Conclua primeiro a configuração na respetiva aplicação web.</string>
     <string name="audiobookshelf.login.error.other_account">Esta é outra conta. Para mudar de conta, termine primeiro a sessão.</string>

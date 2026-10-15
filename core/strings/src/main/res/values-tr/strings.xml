@@ -20,6 +20,7 @@
     <string name="audiobookshelf.login.error.certificate">Telefonunuz bu sunucunun sertifikasına güvenmiyor.</string>
     <string name="audiobookshelf.login.error.credentials">Kullanıcı adı veya şifre yanlış.</string>
     <string name="audiobookshelf.login.error.failed">Oturum açılamadı. Tekrar deneyin.</string>
+    <string name="audiobookshelf.login.error.local_network">Voice için yerel ağa erişim izni gerekiyor. Bu sunucuya bağlanmak için cihazınızın ayarlarında izin verin.</string>
     <string name="audiobookshelf.login.error.not_found">Voice bu adreste bir Audiobookshelf sunucusuna ulaşamıyor. Doğru ağda mısınız?</string>
     <string name="audiobookshelf.login.error.not_set_up">Bu sunucunun kurulumu henüz tamamlanmamış. Önce web uygulamasında kurulumu bitirin.</string>
     <string name="audiobookshelf.login.error.other_account">Bu başka bir hesap. Hesap değiştirmek için önce oturumu kapatın.</string>

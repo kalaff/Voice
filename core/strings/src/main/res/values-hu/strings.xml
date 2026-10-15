@@ -20,6 +20,7 @@
     <string name="audiobookshelf.login.error.certificate">A telefonja nem bízik meg ennek a szervernek a tanúsítványában.</string>
     <string name="audiobookshelf.login.error.credentials">A felhasználónév vagy a jelszó nem stimmel.</string>
     <string name="audiobookshelf.login.error.failed">A bejelentkezés nem sikerült. Próbálja újra.</string>
+    <string name="audiobookshelf.login.error.local_network">A Voice-nak hozzáférésre van szüksége a helyi hálózathoz. Engedélyezze az eszköz beállításaiban, hogy csatlakozhasson ehhez a szerverhez.</string>
     <string name="audiobookshelf.login.error.not_found">A Voice nem talál Audiobookshelf-szervert ezen a címen. A megfelelő hálózaton van?</string>
     <string name="audiobookshelf.login.error.not_set_up">Ez a szerver még nincs beállítva. Előbb fejezze be a beállítást a webes felületén.</string>
     <string name="audiobookshelf.login.error.other_account">Ez egy másik fiók. Fiókváltáshoz előbb jelentkezzen ki.</string>

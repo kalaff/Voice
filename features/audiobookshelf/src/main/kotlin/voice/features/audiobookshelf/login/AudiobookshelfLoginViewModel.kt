@@ -48,8 +48,8 @@ class AudiobookshelfLoginViewModel(
       scope.launch {
         val connection = audiobookshelf.connection.first() ?: return@launch
         knownUsername = connection.username
-        state = AudiobookshelfLoginViewState.Address(address = connection.serverName)
-        onFindServer()
+        // the view finds the server, so the local network permission gate applies to renewals too
+        state = AudiobookshelfLoginViewState.Address(address = connection.serverName, autoFind = true)
       }
     }
   }
@@ -62,7 +62,7 @@ class AudiobookshelfLoginViewModel(
   internal fun onFindServer() {
     val current = state as? AudiobookshelfLoginViewState.Address ?: return
     if (current.busy || current.address.isBlank()) return
-    state = current.copy(busy = true, error = null)
+    state = current.copy(busy = true, error = null, autoFind = false)
     request = scope.launch {
       when (val result = audiobookshelf.findServer(current.address)) {
         is FindServerResult.Found -> {
@@ -79,6 +79,16 @@ class AudiobookshelfLoginViewModel(
         is FindServerResult.TooOld -> state = current.copy(error = AddressError.TooOld(result.version))
       }
     }
+  }
+
+  internal fun onAutoFindConsumed() {
+    val current = state as? AudiobookshelfLoginViewState.Address ?: return
+    state = current.copy(autoFind = false)
+  }
+
+  internal fun onLocalNetworkDenied() {
+    val current = state as? AudiobookshelfLoginViewState.Address ?: return
+    state = current.copy(error = AddressError.LocalNetworkDenied, busy = false, autoFind = false)
   }
 
   internal fun onUsernameChange(username: String) {

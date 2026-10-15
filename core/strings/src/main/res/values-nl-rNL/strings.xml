@@ -20,6 +20,7 @@
     <string name="audiobookshelf.login.error.certificate">Je telefoon vertrouwt het certificaat van deze server niet.</string>
     <string name="audiobookshelf.login.error.credentials">Gebruikersnaam of wachtwoord klopt niet.</string>
     <string name="audiobookshelf.login.error.failed">Inloggen is niet gelukt. Probeer het opnieuw.</string>
+    <string name="audiobookshelf.login.error.local_network">Voice heeft toegang tot het lokale netwerk nodig. Sta die toe in de instellingen van je apparaat om verbinding te maken met deze server.</string>
     <string name="audiobookshelf.login.error.not_found">Voice kan daar geen Audiobookshelf-server bereiken. Zit je op het juiste netwerk?</string>
     <string name="audiobookshelf.login.error.not_set_up">Deze server is nog niet ingesteld. Rond eerst de installatie af in de web-app.</string>
     <string name="audiobookshelf.login.error.other_account">Dat is een ander account. Log eerst uit om van account te wisselen.</string>

@@ -1,7 +1,7 @@
 [versions]
 sdk-compile = "37"
 sdk-min = "28"
-sdk-target = "36"
+sdk-target = "37"
 sdk-robolectric = "35"
 
 coroutines = "1.11.0"

@@ -22,6 +22,7 @@
     <string name="audiobookshelf.login.error.certificate">Váš telefon nedůvěřuje certifikátu tohoto serveru.</string>
     <string name="audiobookshelf.login.error.credentials">Uživatelské jméno nebo heslo není správné.</string>
     <string name="audiobookshelf.login.error.failed">Přihlášení se nepovedlo. Zkuste to znovu.</string>
+    <string name="audiobookshelf.login.error.local_network">Voice potřebuje oprávnění pro přístup k místní síti. Povolte ho v nastavení zařízení a připojte se k tomuto serveru.</string>
     <string name="audiobookshelf.login.error.not_found">Voice na této adrese nemůže najít server Audiobookshelf. Jste ve správné síti?</string>
     <string name="audiobookshelf.login.error.not_set_up">Tento server ještě není nastavený. Nejdřív dokončete nastavení v jeho webové aplikaci.</string>
     <string name="audiobookshelf.login.error.other_account">To je jiný účet. Pokud chcete účet změnit, nejdřív se odhlaste.</string>

@@ -20,6 +20,7 @@
     <string name="audiobookshelf.login.error.certificate">Sinu telefon ei usalda selle serveri sertifikaati.</string>
     <string name="audiobookshelf.login.error.credentials">Kasutajanimi või parool on vale.</string>
     <string name="audiobookshelf.login.error.failed">Sisselogimine ei õnnestunud. Proovi uuesti.</string>
+    <string name="audiobookshelf.login.error.local_network">Voice vajab õigust pääseda kohalikule võrgule. Luba see seadme seadetes, et selle serveriga ühendust luua.</string>
     <string name="audiobookshelf.login.error.not_found">Voice ei saa sellel aadressil ühendust ühegi Audiobookshelfi serveriga. Kas oled õiges võrgus?</string>
     <string name="audiobookshelf.login.error.not_set_up">See server pole veel seadistatud. Vii seadistamine kõigepealt selle veebirakenduses lõpuni.</string>
     <string name="audiobookshelf.login.error.other_account">See on teine konto. Konto vahetamiseks logi esmalt välja.</string>
