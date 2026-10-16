@@ -299,6 +299,8 @@
     <string name="playback.jump_back.chapter">بازگشت به فصل %1$d · %2$s</string>
     <string name="playback.option.skip_silence">رد کردن بخش های حاوی سکوت</string>
     <string name="playback.option.volume_boost">افزایش ولوم صدا</string>
+    <string name="playback.skip_intro.off">خاموش</string>
+    <string name="playback.skip_intro.title">پرش از مقدمه‌ی فصل</string>
     <string name="playback.speed.decrease">آهسته‌تر</string>
     <string name="playback.speed.increase">سریع‌تر</string>
     <string name="playback.speed.title">سرعت بازپخش</string>

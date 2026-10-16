@@ -68,6 +68,7 @@ class BookPlayViewTest {
               onBookmarkClick = {},
               onBookmarkLongClick = {},
               onSpeedChangeClick = {},
+              onSkipIntroClick = {},
               onSkipSilenceClick = {},
               onVolumeBoostClick = {},
               onSkipToNext = {},

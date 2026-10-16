@@ -22,6 +22,9 @@ public data class BookContent(
   val positionInChapter: Long,
   @ColumnInfo(defaultValue = "0")
   val gain: Float,
+  /** Seconds skipped at the start of every chapter, for the intros and announcements of series books. */
+  @ColumnInfo(defaultValue = "0")
+  val introSkipSeconds: Int = 0,
   @Embedded
   val metadata: BookMetadata,
   val customName: String?,

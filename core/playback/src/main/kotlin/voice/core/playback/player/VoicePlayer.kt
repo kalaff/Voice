@@ -16,6 +16,7 @@ import voice.core.analytics.api.Analytics
 import voice.core.data.BookContent
 import voice.core.data.BookId
 import voice.core.data.ListeningEvent
+import voice.core.data.durationMs
 import voice.core.data.repo.BookRepository
 import voice.core.data.store.AutoRewindAmountStore
 import voice.core.data.store.CurrentBookStore
@@ -118,9 +119,39 @@ class VoicePlayer(
     }
   }
 
+  private val chapterIntroSkipListener = object : Player.Listener {
+    override fun onPositionDiscontinuity(
+      oldPosition: Player.PositionInfo,
+      newPosition: Player.PositionInfo,
+      reason: Int,
+    ) {
+      if (reason != DISCONTINUITY_REASON_AUTO_TRANSITION) return
+      scope.launch {
+        skipChapterIntro(newPosition.mediaItemIndex)
+      }
+    }
+  }
+
+  /**
+   * Jumps over the intro of a chapter when the book asks for it. The read happens per transition so that changing
+   * the setting takes effect for the next chapter without reloading the book. An automatic transition always lands
+   * on a chapter start, so the skip goes to an absolute position in the new chapter and [ChapterMarkPlayer] clamps
+   * it to chapters shorter than the skip.
+   */
+  private suspend fun skipChapterIntro(mediaItemIndex: Int) {
+    if (mediaItemIndex == C.INDEX_UNSET) return
+    val bookId = player.currentMediaItem?.mediaId?.toMediaIdOrNull()?.bookId ?: return
+    val introSkipSeconds = repo.get(bookId)?.content?.introSkipSeconds ?: return
+    if (introSkipSeconds <= 0) return
+    Logger.v("Skipping the intro of item $mediaItemIndex")
+    player.seekTo(mediaItemIndex, introSkipSeconds * 1000L)
+  }
+
   init {
+    // the sleep timer pauses first, so its history records the position before the intro skip moves it
     player.addListener(endOfChapterSleepTimerListener)
     player.addListener(autoRewindListener)
+    player.addListener(chapterIntroSkipListener)
     scope.launch {
       combine(globalSpeedOverrideStore.data, globalSpeedStore.data) { enabled, speed -> enabled to speed }
         .distinctUntilChanged()
@@ -410,10 +441,18 @@ class VoicePlayer(
             chapterId = book.content.currentChapter,
             positionInChapterMs = book.content.positionInChapter,
           ) ?: return
+          val positionInItemMs = currentPlaybackItem.positionInMediaItem(book.content.positionInChapter)
+          val introSkipMs = book.content.introSkipSeconds * 1000L
+          val startPositionMs = if (positionInItemMs < introSkipMs) {
+            // starting inside the intro counts as starting at the chapter's beginning
+            (positionInItemMs + introSkipMs).coerceAtMost(currentPlaybackItem.mark.durationMs)
+          } else {
+            positionInItemMs
+          }
           player.setBook(
             book = book,
             startItemIndex = currentPlaybackItem.index,
-            positionInItemMs = currentPlaybackItem.positionInMediaItem(book.content.positionInChapter),
+            positionInItemMs = startPositionMs,
           )
         }
       } else {

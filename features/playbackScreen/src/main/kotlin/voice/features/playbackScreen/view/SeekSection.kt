@@ -96,6 +96,8 @@ internal fun SeekSection(
   unavailable: Boolean = false,
 ) {
   var dragFraction by remember { mutableStateOf<Float?>(null) }
+  // the position the drag started from, so the label can show where the seek would land
+  var dragAnchor by remember { mutableStateOf<Duration?>(null) }
   var pendingFraction by remember { mutableStateOf<Float?>(null) }
   val progress = (playedTime / duration).toFloat().coerceIn(0F, 1F)
   LaunchedEffect(pendingFraction) {
@@ -122,9 +124,13 @@ internal fun SeekSection(
       dragging = dragging,
       clock = clock,
       bubbleText = formatTime(shownTime.inWholeMilliseconds, duration.inWholeMilliseconds),
-      onDrag = { dragFraction = it },
+      onDrag = { fraction ->
+        if (dragFraction == null) dragAnchor = playedTime
+        dragFraction = fraction
+      },
       onSeek = { fraction ->
         dragFraction = null
+        dragAnchor = null
         pendingFraction = fraction
         onSeek(duration * fraction.toDouble())
       },
@@ -140,8 +146,16 @@ internal fun SeekSection(
         targetValue = if (dragging) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
         label = "elapsedColor",
       )
+      val anchor = dragAnchor
       RollingText(
-        text = formatTime(shownTime.inWholeMilliseconds, duration.inWholeMilliseconds),
+        text = if (dragging && anchor != null) {
+          seekOffsetText(
+            offsetMs = shownTime.inWholeMilliseconds - anchor.inWholeMilliseconds,
+            durationMs = duration.inWholeMilliseconds,
+          )
+        } else {
+          formatTime(shownTime.inWholeMilliseconds, duration.inWholeMilliseconds)
+        },
         style = MaterialTheme.typography.labelLargeEmphasized,
         color = elapsedColor,
       )
@@ -395,4 +409,13 @@ private fun OfflinePill(modifier: Modifier = Modifier) {
       maxLines = 1,
     )
   }
+}
+
+/** How far a drag would jump, signed, like +2:30 or −0:45. */
+internal fun seekOffsetText(
+  offsetMs: Long,
+  durationMs: Long,
+): String {
+  val sign = if (offsetMs < 0) "−" else "+"
+  return sign + formatTime(abs(offsetMs), durationMs)
 }

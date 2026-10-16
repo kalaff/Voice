@@ -314,6 +314,8 @@
     <string name="playback.jump_back.chapter">Înapoi la cap. %1$d · %2$s</string>
     <string name="playback.option.skip_silence">Omitere liniște</string>
     <string name="playback.option.volume_boost">Amplificare volum</string>
+    <string name="playback.skip_intro.off">Dezactivat</string>
+    <string name="playback.skip_intro.title">Omitere început de capitol</string>
     <string name="playback.speed.decrease">Mai încet</string>
     <string name="playback.speed.increase">Mai repede</string>
     <string name="playback.speed.title">Viteză de redare</string>

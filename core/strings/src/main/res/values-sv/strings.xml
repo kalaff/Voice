@@ -299,6 +299,8 @@
     <string name="playback.jump_back.chapter">Tillbaka till kap. %1$d · %2$s</string>
     <string name="playback.option.skip_silence">Hoppa över tystnad</string>
     <string name="playback.option.volume_boost">Volymförstärkning</string>
+    <string name="playback.skip_intro.off">Av</string>
+    <string name="playback.skip_intro.title">Hoppa över kapitelintro</string>
     <string name="playback.speed.decrease">Långsammare</string>
     <string name="playback.speed.increase">Snabbare</string>
     <string name="playback.speed.title">Uppspelningshastighet</string>

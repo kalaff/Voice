@@ -458,6 +458,74 @@ class VoicePlayerTest {
   }
 
   @Test
+  fun `loading a book skips the intro when it starts inside one`() = scope.runTest {
+    setMediaItems(
+      listOf(chapter(ChapterMark(startMs = 0, endMs = 20_000, name = null))),
+      introSkipSeconds = 5,
+    )
+
+    player.prepare()
+    awaitReady()
+
+    player.shouldHavePosition(0, 5_000)
+  }
+
+  @Test
+  fun `loading a book keeps a position past the intro`() = scope.runTest {
+    setMediaItems(
+      listOf(chapter(ChapterMark(startMs = 0, endMs = 20_000, name = null))),
+      positionInChapter = 8_000,
+      introSkipSeconds = 5,
+    )
+
+    player.prepare()
+    awaitReady()
+
+    player.shouldHavePosition(0, 8_000)
+  }
+
+  @Test
+  fun `crossing into a chapter skips its intro`() = scope.runTest {
+    setMediaItems(
+      listOf(
+        chapter(
+          ChapterMark(startMs = 0, endMs = 1_000, name = null),
+          ChapterMark(startMs = 1_000, endMs = 20_000, name = null),
+        ),
+      ),
+      introSkipSeconds = 5,
+    )
+
+    player.prepare()
+    awaitReady()
+
+    TestPlayerRunHelper.play(internalPlayer).untilPosition(0, 1_000)
+    shadowOf(Looper.getMainLooper()).idle()
+    // the transition queues the skip, which runs on the test scheduler and then seeks the player
+    scope.advanceUntilIdle()
+    TestPlayerRunHelper.advance(internalPlayer).untilPendingCommandsAreFullyHandled()
+
+    player.shouldHavePosition(1, 5_000)
+  }
+
+  @Test
+  fun `a manual jump into the next chapter keeps the intro`() = scope.runTest {
+    setMediaItems(
+      listOf(
+        chapter(ChapterMark(startMs = 0, endMs = 20_000, name = null)),
+        chapter(ChapterMark(startMs = 0, endMs = 20_000, name = null)),
+      ),
+      introSkipSeconds = 5,
+    )
+
+    player.prepare()
+    awaitReady()
+
+    player.forceSeekToNext()
+    player.shouldHavePosition(1, 0)
+  }
+
+  @Test
   fun `end of chapter sleep timer pauses at start of next chapter mark`() = scope.runTest {
     setMediaItems(
       listOf(
@@ -632,6 +700,7 @@ class VoicePlayerTest {
     positionInChapter: Long = 0,
     playbackSpeed: Float = 1F,
     lastPlayedAt: Instant = Instant.EPOCH,
+    introSkipSeconds: Int = 0,
   ) {
     currentBook = book(chapters, bookId).update {
       it.copy(
@@ -639,6 +708,7 @@ class VoicePlayerTest {
         positionInChapter = positionInChapter,
         playbackSpeed = playbackSpeed,
         lastPlayedAt = lastPlayedAt,
+        introSkipSeconds = introSkipSeconds,
       )
     }
     player.setMediaItem(mediaItemProvider.mediaItem(currentBook))

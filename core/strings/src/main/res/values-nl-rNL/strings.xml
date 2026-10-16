@@ -299,6 +299,8 @@
     <string name="playback.jump_back.chapter">Terug naar hfst. %1$d · %2$s</string>
     <string name="playback.option.skip_silence">Stilte overslaan</string>
     <string name="playback.option.volume_boost">Volumeversterking</string>
+    <string name="playback.skip_intro.off">Uit</string>
+    <string name="playback.skip_intro.title">Hoofdstukintro overslaan</string>
     <string name="playback.speed.decrease">Langzamer</string>
     <string name="playback.speed.increase">Sneller</string>
     <string name="playback.speed.title">Afspeelsnelheid</string>

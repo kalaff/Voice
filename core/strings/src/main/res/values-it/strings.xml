@@ -314,6 +314,8 @@
     <string name="playback.jump_back.chapter">Torna al cap. %1$d · %2$s</string>
     <string name="playback.option.skip_silence">Salta silenzio</string>
     <string name="playback.option.volume_boost">Aumento del volume</string>
+    <string name="playback.skip_intro.off">Disattivato</string>
+    <string name="playback.skip_intro.title">Salta inizio capitolo</string>
     <string name="playback.speed.decrease">Più lento</string>
     <string name="playback.speed.increase">Più veloce</string>
     <string name="playback.speed.title">Velocità di riproduzione</string>

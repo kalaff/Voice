@@ -299,6 +299,8 @@
     <string name="playback.jump_back.chapter">Böl. %1$d · %2$s konumuna dön</string>
     <string name="playback.option.skip_silence">Sessizliği Geç</string>
     <string name="playback.option.volume_boost">Ses yükseltme</string>
+    <string name="playback.skip_intro.off">Kapalı</string>
+    <string name="playback.skip_intro.title">Bölüm girişini atla</string>
     <string name="playback.speed.decrease">Daha yavaş</string>
     <string name="playback.speed.increase">Daha hızlı</string>
     <string name="playback.speed.title">Oynatma hızı</string>

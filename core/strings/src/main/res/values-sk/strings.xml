@@ -329,6 +329,8 @@
     <string name="playback.jump_back.chapter">Späť na kap. %1$d · %2$s</string>
     <string name="playback.option.skip_silence">Preskočiť ticho</string>
     <string name="playback.option.volume_boost">Zvýrazniť hlasitosť</string>
+    <string name="playback.skip_intro.off">Vypnuté</string>
+    <string name="playback.skip_intro.title">Preskočenie úvodu kapitoly</string>
     <string name="playback.speed.decrease">Pomalšie</string>
     <string name="playback.speed.increase">Rýchlejšie</string>
     <string name="playback.speed.title">Rýchlosť prehrávania</string>

@@ -338,7 +338,7 @@ class ProgressCarryOverTest {
     val old = bookContent(
       id = BookId(documentUri(tree = "primary:Audiobooks", document = "primary:Audiobooks/Book")),
       chapters = chapters.map { ChapterId(documentUri(tree = "primary:Audiobooks", document = "primary:Audiobooks/Book/$it")) },
-    ).copy(customName = "Theirs", lastPlayedAt = Instant.parse("2026-01-02T10:00:00Z"))
+    ).copy(customName = "Theirs", lastPlayedAt = Instant.parse("2026-01-02T10:00:00Z"), introSkipSeconds = 7)
     val new = bookContent(
       id = BookId(documentUri(tree = "primary:Audiobooks/Book", document = "primary:Audiobooks/Book")),
       chapters = chapters.map {
@@ -350,6 +350,7 @@ class ProgressCarryOverTest {
 
     assertEquals(expected = "Mine", actual = carried.name)
     assertEquals(expected = old.lastPlayedAt, actual = carried.lastPlayedAt)
+    assertEquals(expected = 7, actual = carried.introSkipSeconds)
   }
 
   @Test
