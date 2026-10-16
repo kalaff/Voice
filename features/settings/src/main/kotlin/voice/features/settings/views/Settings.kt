@@ -191,6 +191,8 @@ private fun LazyListScope.sections(
       onLockScreenSliderToggle = listener::toggleLockScreenSlider,
       playTogether = viewState.playTogether,
       onPlayTogetherToggle = listener::togglePlayTogether,
+      globalSpeed = viewState.globalSpeed,
+      onGlobalSpeedToggle = listener::toggleGlobalSpeed,
     )
   }
   section("sleepTimer") { modifier ->

@@ -81,6 +81,8 @@ class BookmarkViewModelTest {
     kioskModeFeatureFlag = MemoryFeatureFlag(false),
     experimentalPlaybackPersistenceFeatureFlag = MemoryFeatureFlag(experimentalPlaybackPersistence),
     lastPlaybackSpeedStore = MemoryDataStore(lastPlaybackSpeed),
+    globalSpeedOverrideStore = MemoryDataStore(false),
+    globalSpeedStore = MemoryDataStore(1F),
     historyTabOpenStore = historyTabOpenStore,
     bookId = book.id,
     editBookmarkId = editBookmarkId,

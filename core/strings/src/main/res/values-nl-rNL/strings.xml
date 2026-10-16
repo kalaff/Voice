@@ -302,6 +302,7 @@
     <string name="playback.speed.decrease">Langzamer</string>
     <string name="playback.speed.increase">Sneller</string>
     <string name="playback.speed.title">Afspeelsnelheid</string>
+    <string name="playback.speed.use_for_all">Gebruik voor alle boeken</string>
     <string name="playback.volume_boost.off">Uit</string>
     <string name="review.prompt.action.feedback">Feedback geven</string>
     <string name="review.prompt.action.later">Niet nu</string>
@@ -355,6 +356,8 @@
     <string name="settings.playback.auto_rewind.off">Uit</string>
     <string name="settings.playback.auto_rewind.summary">Springt een stukje terug als je verdergaat, zodat je de draad niet kwijtraakt</string>
     <string name="settings.playback.auto_rewind.title">Automatisch terugspoelen</string>
+    <string name="settings.playback.global_speed.summary">Eén snelheid voor elk boek. Zet hem uit, zodat elk boek zijn eigen snelheid behoudt.</string>
+    <string name="settings.playback.global_speed.title">Globale afspeelsnelheid</string>
     <string name="settings.playback.lock_screen_slider.summary">Spoel door het hoofdstuk vanaf het vergrendelscherm en de melding. Zet hem uit, zodat je door een onbedoelde aanraking niet je plek kwijtraakt.</string>
     <string name="settings.playback.lock_screen_slider.title">Schuifbalk op het vergrendelscherm</string>
     <string name="settings.playback.play_together.summary">Blijf afspelen wanneer een andere app geluid maakt. Oproepen en alarms zetten Voice ook niet op pauze.</string>

@@ -7,6 +7,8 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import dev.zacsweers.metro.Inject
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -17,6 +19,8 @@ import voice.core.data.ListeningEvent
 import voice.core.data.repo.BookRepository
 import voice.core.data.store.AutoRewindAmountStore
 import voice.core.data.store.CurrentBookStore
+import voice.core.data.store.GlobalSpeedOverrideStore
+import voice.core.data.store.GlobalSpeedStore
 import voice.core.data.store.LastPlaybackSpeedStore
 import voice.core.data.store.SeekTimeStore
 import voice.core.logging.api.Logger
@@ -28,6 +32,7 @@ import voice.core.playback.history.playbackPosition
 import voice.core.playback.misc.Decibel
 import voice.core.playback.misc.VolumeGain
 import voice.core.playback.session.MediaId
+import voice.core.playback.session.NotificationSpeedButton
 import voice.core.playback.session.bookId
 import voice.core.playback.session.playbackItemForPosition
 import voice.core.playback.session.positionInMediaItem
@@ -53,6 +58,11 @@ class VoicePlayer(
   private val autoRewindAmountStore: DataStore<Int>,
   @LastPlaybackSpeedStore
   private val lastPlaybackSpeedStore: DataStore<Float>,
+  @GlobalSpeedOverrideStore
+  private val globalSpeedOverrideStore: DataStore<Boolean>,
+  @GlobalSpeedStore
+  private val globalSpeedStore: DataStore<Float>,
+  private val notificationSpeedButton: NotificationSpeedButton,
   private val scope: CoroutineScope,
   private val volumeGain: VolumeGain,
   private val sleepTimer: SleepTimer,
@@ -111,6 +121,22 @@ class VoicePlayer(
   init {
     player.addListener(endOfChapterSleepTimerListener)
     player.addListener(autoRewindListener)
+    scope.launch {
+      combine(globalSpeedOverrideStore.data, globalSpeedStore.data) { enabled, speed -> enabled to speed }
+        .distinctUntilChanged()
+        .collect { (enabled, speed) ->
+          // the settings screen has no player access, so the player follows the toggle itself
+          val applied = if (enabled) {
+            speed
+          } else {
+            // with nothing loaded there is no own speed to go back to
+            if (player.currentMediaItem == null) return@collect
+            currentBookStoreId.data.first()?.let { repo.get(it)?.content?.playbackSpeed } ?: return@collect
+          }
+          player.setPlaybackSpeed(applied)
+          notificationSpeedButton.refresh(applied)
+        }
+    }
   }
 
   // The app changes chapters through custom commands that end up here, because its controller can still hold the book
@@ -368,13 +394,16 @@ class VoicePlayer(
         }
         if (book != null) {
           val speed = book.withDefaultSpeed { runBlocking { lastPlaybackSpeedStore.data.first() } }.content.playbackSpeed
-          player.setPlaybackSpeed(speed)
           if (speed != book.content.playbackSpeed) {
             // loading the book marks it as played, so from here on this is its own speed
             scope.launch {
               repo.updateBook(book.id) { it.copy(playbackSpeed = speed) }
             }
           }
+          val overrideEnabled = runBlocking { globalSpeedOverrideStore.data.first() }
+          val effective = if (overrideEnabled) runBlocking { globalSpeedStore.data.first() } else speed
+          player.setPlaybackSpeed(effective)
+          notificationSpeedButton.refresh(effective)
           setSkipSilenceEnabled(book.content.skipSilence)
           volumeGain.gain = Decibel(book.content.gain)
           val currentPlaybackItem = book.playbackItemForPosition(
@@ -396,9 +425,14 @@ class VoicePlayer(
   override fun setPlaybackSpeed(speed: Float) {
     super.setPlaybackSpeed(speed)
     scope.launch {
-      updateBook { it.copy(playbackSpeed = speed) }
+      if (globalSpeedOverrideStore.data.first()) {
+        globalSpeedStore.updateData { speed }
+      } else {
+        updateBook { it.copy(playbackSpeed = speed) }
+      }
     }
     rememberSpeed(speed)
+    notificationSpeedButton.refresh(speed)
   }
 
   /**
@@ -406,6 +440,8 @@ class VoicePlayer(
    */
   private fun rememberSpeed(speed: Float) {
     scope.launch {
+      // the global override is its own value and must not leak into the default for new books
+      if (globalSpeedOverrideStore.data.first()) return@launch
       lastPlaybackSpeedStore.updateData { speed }
     }
   }

@@ -70,7 +70,10 @@ data class BookPlayViewState(
 }
 
 internal sealed interface BookPlayDialogViewState {
-  data class SpeedDialog(val speed: Float) : BookPlayDialogViewState
+  data class SpeedDialog(
+    val speed: Float,
+    val overrideEnabled: Boolean = false,
+  ) : BookPlayDialogViewState
 
   data class VolumeGainDialog(
     val gain: Decibel,

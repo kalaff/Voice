@@ -317,6 +317,7 @@
     <string name="playback.speed.decrease">לאט יותר</string>
     <string name="playback.speed.increase">מהר יותר</string>
     <string name="playback.speed.title">מהירות השמעה</string>
+    <string name="playback.speed.use_for_all">שימוש בכל הספרים</string>
     <string name="playback.volume_boost.off">כבוי</string>
     <string name="review.prompt.action.feedback">שיתוף משוב</string>
     <string name="review.prompt.action.later">לא עכשיו</string>
@@ -371,6 +372,8 @@
     <string name="settings.playback.auto_rewind.off">כבוי</string>
     <string name="settings.playback.auto_rewind.summary">חוזר מעט אחורה כשממשיכים, כדי שלא תאבדו את החוט</string>
     <string name="settings.playback.auto_rewind.title">הרצה אחורה אוטומטית</string>
+    <string name="settings.playback.global_speed.summary">מהירות אחת לכל הספרים. כבו את האפשרות כדי שכל ספר יישאר במהירות שלו.</string>
+    <string name="settings.playback.global_speed.title">מהירות השמעה גלובלית</string>
     <string name="settings.playback.lock_screen_slider.summary">אפשר לנוע בפרק ממסך הנעילה ומההתראה. כבו את האפשרות כדי שנגיעה בטעות לא תזיז אתכם מהמקום שבו הייתם.</string>
     <string name="settings.playback.lock_screen_slider.title">פס ההתקדמות במסך הנעילה</string>
     <string name="settings.playback.play_together.summary">ממשיכים לנגן גם כשאפליקציה אחרת משמיעה קול. שיחות והתראות גם לא ישהו את Voice.</string>

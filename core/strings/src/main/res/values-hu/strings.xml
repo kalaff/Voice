@@ -302,6 +302,7 @@
     <string name="playback.speed.decrease">Lassabb</string>
     <string name="playback.speed.increase">Gyorsabb</string>
     <string name="playback.speed.title">Lejátszási sebesség</string>
+    <string name="playback.speed.use_for_all">Alkalmazás minden könyvre</string>
     <string name="playback.volume_boost.off">Ki</string>
     <string name="review.prompt.action.feedback">Visszajelzés küldése</string>
     <string name="review.prompt.action.later">Most nem</string>
@@ -355,6 +356,8 @@
     <string name="settings.playback.auto_rewind.off">Ki</string>
     <string name="settings.playback.auto_rewind.summary">Folytatáskor kicsit visszaugrik, hogy ne veszítse el a fonalat</string>
     <string name="settings.playback.auto_rewind.title">Automatikus visszatekerés</string>
+    <string name="settings.playback.global_speed.summary">Egy sebesség minden könyvhöz. Kapcsolja ki, hogy minden könyv megtarthassa a saját sebességét.</string>
+    <string name="settings.playback.global_speed.title">Globális lejátszási sebesség</string>
     <string name="settings.playback.lock_screen_slider.summary">Tekerjen a fejezetben a lezárási képernyőről és az értesítésből. Kapcsolja ki, hogy egy véletlen érintés ne vigye el onnan, ahol tartott.</string>
     <string name="settings.playback.lock_screen_slider.title">Csúszka a lezárási képernyőn</string>
     <string name="settings.playback.play_together.summary">Folytatja a lejátszást, ha egy másik alkalmazás hangot ad. A hívások és a riasztások sem szakítják meg a Voice-t.</string>

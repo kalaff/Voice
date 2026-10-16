@@ -60,6 +60,7 @@ class SettingsViewModelTest {
   private val seekTimeStore = MemoryDataStore(30)
   private val lockScreenSliderStore = MemoryDataStore(true)
   private val playTogetherStore = MemoryDataStore(false)
+  private val globalSpeedOverrideStore = MemoryDataStore(false)
   private val gridModeStore = MemoryDataStore(GridMode.GRID)
   private val sleepTimerPreferenceStore = MemoryDataStore(SleepTimerPreference.Default)
   private val analyticsConsentStore = MemoryDataStore(false)
@@ -97,6 +98,7 @@ class SettingsViewModelTest {
     seekTimeStore = seekTimeStore,
     lockScreenSliderStore = lockScreenSliderStore,
     playTogetherStore = playTogetherStore,
+    globalSpeedOverrideStore = globalSpeedOverrideStore,
     navigator = navigator,
     appInfoProvider = appInfoProvider,
     gridModeStore = gridModeStore,
@@ -473,6 +475,22 @@ class SettingsViewModelTest {
 
       viewModel.togglePlayTogether()
       assertFalse(awaitItem().playTogether)
+    }
+  }
+
+  @Test
+  fun `the global speed can be turned on and off again`() = scope.runTest {
+    backgroundScope.launchMolecule(RecompositionMode.Immediate) {
+      viewModel.viewState()
+    }.filterNotNull().test {
+      assertFalse(awaitItem().globalSpeed)
+
+      viewModel.toggleGlobalSpeed()
+      assertTrue(awaitItem().globalSpeed)
+      assertTrue(globalSpeedOverrideStore.data.first())
+
+      viewModel.toggleGlobalSpeed()
+      assertFalse(awaitItem().globalSpeed)
     }
   }
 }

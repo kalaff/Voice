@@ -302,6 +302,7 @@
     <string name="playback.speed.decrease">Hitaammin</string>
     <string name="playback.speed.increase">Nopeammin</string>
     <string name="playback.speed.title">Toiston nopeus</string>
+    <string name="playback.speed.use_for_all">Käytä kaikille kirjoille</string>
     <string name="playback.volume_boost.off">Pois</string>
     <string name="review.prompt.action.feedback">Anna palautetta</string>
     <string name="review.prompt.action.later">Ei nyt</string>
@@ -355,6 +356,8 @@
     <string name="settings.playback.auto_rewind.off">Pois</string>
     <string name="settings.playback.auto_rewind.summary">Kelaa jatkettaessa hieman taaksepäin, jotta et putoa kärryiltä</string>
     <string name="settings.playback.auto_rewind.title">Automaattinen takaisinkelaus</string>
+    <string name="settings.playback.global_speed.summary">Yksi nopeus kaikille kirjoille. Poista se käytöstä, jotta jokainen kirja säilyttää oman nopeutensa.</string>
+    <string name="settings.playback.global_speed.title">Yleinen toiston nopeus</string>
     <string name="settings.playback.lock_screen_slider.summary">Kelaa lukua lukitusnäytöltä ja ilmoituksesta. Poista se käytöstä, jotta vahingossa osunut kosketus ei siirrä sinua pois kohdastasi.</string>
     <string name="settings.playback.lock_screen_slider.title">Lukitusnäytön liukusäädin</string>
     <string name="settings.playback.play_together.summary">Jatkaa toistoa, kun toinen sovellus tuottaa ääntä. Puhelut ja hälytykset eivät myöskään keskeytä Voicea.</string>

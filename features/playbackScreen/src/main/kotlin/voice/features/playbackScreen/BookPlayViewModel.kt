@@ -30,6 +30,8 @@ import voice.core.data.repo.BookRepository
 import voice.core.data.repo.BookmarkRepo
 import voice.core.data.sleeptimer.SleepTimerPreference
 import voice.core.data.store.CurrentBookStore
+import voice.core.data.store.GlobalSpeedOverrideStore
+import voice.core.data.store.GlobalSpeedStore
 import voice.core.data.store.LastPlaybackSpeedStore
 import voice.core.data.store.SeekTimeStore
 import voice.core.data.store.SleepTimerPreferenceStore
@@ -46,6 +48,7 @@ import voice.core.playback.misc.VolumeGain
 import voice.core.playback.overlay
 import voice.core.playback.playstate.PlayStateManager
 import voice.core.playback.withDefaultSpeed
+import voice.core.playback.withEffectiveSpeed
 import voice.core.sleeptimer.SleepTimer
 import voice.core.sleeptimer.SleepTimerMode
 import voice.core.sleeptimer.SleepTimerMode.TimedWithDuration
@@ -88,6 +91,10 @@ class BookPlayViewModel(
   private val serverLibrary: ServerLibrary,
   @LastPlaybackSpeedStore
   private val lastPlaybackSpeedStore: DataStore<Float>,
+  @GlobalSpeedOverrideStore
+  private val globalSpeedOverrideStore: DataStore<Boolean>,
+  @GlobalSpeedStore
+  private val globalSpeedStore: DataStore<Float>,
   @Assisted
   private val bookId: BookId,
 ) {
@@ -113,10 +120,16 @@ class BookPlayViewModel(
     if (kioskMode) return kioskModeViewState()
 
     val defaultSpeed = remember { lastPlaybackSpeedStore.data }.collectAsState(initial = null).value
+    val speedOverrideEnabled = remember { globalSpeedOverrideStore.data }.collectAsState(initial = null).value
+    val globalSpeed = remember { globalSpeedStore.data }.collectAsState(initial = null).value
     val persistedBook = remember(bookId) {
       bookRepository.flow(bookId).filterNotNull()
     }.collectAsState(initial = null).value
-      ?.withDefaultSpeed { defaultSpeed ?: return null }
+      ?.withEffectiveSpeed(
+        overrideEnabled = speedOverrideEnabled ?: return null,
+        overrideSpeed = globalSpeed ?: return null,
+        defaultSpeed = { defaultSpeed ?: return null },
+      )
       ?: return null
 
     val experimentalPlaybackPersistence = experimentalPlaybackPersistenceFeatureFlag.get()
@@ -274,8 +287,23 @@ class BookPlayViewModel(
   }
 
   fun onPlaybackSpeedChanged(speed: Float) {
-    dialogState.value = BookPlayDialogViewState.SpeedDialog(speed)
+    val overrideEnabled = (dialogState.value as? BookPlayDialogViewState.SpeedDialog)?.overrideEnabled ?: false
+    dialogState.value = BookPlayDialogViewState.SpeedDialog(speed, overrideEnabled)
     player.setSpeed(speed)
+  }
+
+  fun onGlobalSpeedToggle() {
+    scope.launch {
+      val enabled = globalSpeedOverrideStore.updateData { !it }
+      val dialog = dialogState.value as? BookPlayDialogViewState.SpeedDialog ?: return@launch
+      val speed = if (enabled) {
+        globalSpeedStore.data.first()
+      } else {
+        currentBook()?.withDefaultSpeed { lastPlaybackSpeedStore.data.first() }?.content?.playbackSpeed
+          ?: dialog.speed
+      }
+      dialogState.value = dialog.copy(speed = speed, overrideEnabled = enabled)
+    }
   }
 
   fun onVolumeGainChanged(gain: Decibel) {
@@ -357,11 +385,16 @@ class BookPlayViewModel(
 
   fun onPlaybackSpeedIconClick() {
     scope.launch {
-      val playbackSpeed = currentBook()
-        ?.withDefaultSpeed { lastPlaybackSpeedStore.data.first() }
-        ?.content?.playbackSpeed
-        ?: return@launch
-      dialogState.value = BookPlayDialogViewState.SpeedDialog(playbackSpeed)
+      val overrideEnabled = globalSpeedOverrideStore.data.first()
+      val playbackSpeed = if (overrideEnabled) {
+        globalSpeedStore.data.first()
+      } else {
+        currentBook()
+          ?.withDefaultSpeed { lastPlaybackSpeedStore.data.first() }
+          ?.content?.playbackSpeed
+          ?: return@launch
+      }
+      dialogState.value = BookPlayDialogViewState.SpeedDialog(playbackSpeed, overrideEnabled)
     }
   }
 

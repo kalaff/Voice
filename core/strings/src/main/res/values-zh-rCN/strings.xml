@@ -287,6 +287,7 @@
     <string name="playback.speed.decrease">减速</string>
     <string name="playback.speed.increase">加速</string>
     <string name="playback.speed.title">播放速度</string>
+    <string name="playback.speed.use_for_all">用于所有书</string>
     <string name="playback.volume_boost.off">关闭</string>
     <string name="review.prompt.action.feedback">分享反馈</string>
     <string name="review.prompt.action.later">以后再说</string>
@@ -339,6 +340,8 @@
     <string name="settings.playback.auto_rewind.off">关闭</string>
     <string name="settings.playback.auto_rewind.summary">继续播放时稍微往回倒一点，免得您接不上情节</string>
     <string name="settings.playback.auto_rewind.title">自动回退</string>
+    <string name="settings.playback.global_speed.summary">所有书共用一个速度。关闭后，每本书保持自己的速度。</string>
+    <string name="settings.playback.global_speed.title">全局播放速度</string>
     <string name="settings.playback.lock_screen_slider.summary">可在锁屏和通知中拖动进度条，在本章内跳转。关闭后，误触也不会让您找不到听到哪儿了。</string>
     <string name="settings.playback.lock_screen_slider.title">锁屏进度条</string>
     <string name="settings.playback.play_together.summary">其他应用发出声音时继续播放。来电和闹钟也不会暂停 Voice。</string>

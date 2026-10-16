@@ -302,6 +302,7 @@
     <string name="playback.speed.decrease">Langsamer</string>
     <string name="playback.speed.increase">Schneller</string>
     <string name="playback.speed.title">Abspielgeschwindigkeit</string>
+    <string name="playback.speed.use_for_all">Für alle Bücher verwenden</string>
     <string name="playback.volume_boost.off">Aus</string>
     <string name="review.prompt.action.feedback">Feedback geben</string>
     <string name="review.prompt.action.later">Nicht jetzt</string>
@@ -355,6 +356,8 @@
     <string name="settings.playback.auto_rewind.off">Aus</string>
     <string name="settings.playback.auto_rewind.summary">Springt beim Fortsetzen ein Stück zurück, damit Du den Faden nicht verlierst</string>
     <string name="settings.playback.auto_rewind.title">Automatisch zurückspulen</string>
+    <string name="settings.playback.global_speed.summary">Eine Geschwindigkeit für alle Bücher. Schalte es aus, damit jedes Buch seine eigene Geschwindigkeit behält.</string>
+    <string name="settings.playback.global_speed.title">Globale Abspielgeschwindigkeit</string>
     <string name="settings.playback.lock_screen_slider.summary">Spult auf dem Sperrbildschirm und in der Benachrichtigung durchs Kapitel. Schalte ihn aus, damit eine versehentliche Berührung Dich nicht Deine Stelle kostet.</string>
     <string name="settings.playback.lock_screen_slider.title">Regler auf dem Sperrbildschirm</string>
     <string name="settings.playback.play_together.summary">Spielt weiter, wenn eine andere App Geräusche macht. Anrufe und Wecker pausieren Voice ebenfalls nicht.</string>

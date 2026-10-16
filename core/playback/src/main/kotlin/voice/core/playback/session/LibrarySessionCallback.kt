@@ -36,6 +36,7 @@ import voice.core.data.store.CurrentBookStore
 import voice.core.data.store.LockScreenSliderStore
 import voice.core.logging.api.Logger
 import voice.core.playback.history.CommandSourceResolver
+import voice.core.playback.nextPlaybackSpeed
 import voice.core.playback.player.VoicePlayer
 import voice.core.playback.session.search.BookSearchHandler
 import voice.core.playback.session.search.BookSearchParser
@@ -211,6 +212,7 @@ class LibrarySessionCallback(
     return sessionCommands
       .buildUpon()
       .add(SessionCommand(CustomCommand.CUSTOM_COMMAND_ACTION, Bundle.EMPTY))
+      .add(SessionCommand(CustomCommand.CYCLE_SPEED_ACTION, Bundle.EMPTY))
       .build()
   }
 
@@ -262,6 +264,10 @@ class LibrarySessionCallback(
     customCommand: SessionCommand,
     args: Bundle,
   ): ListenableFuture<SessionResult> {
+    if (customCommand.customAction == CustomCommand.CYCLE_SPEED_ACTION) {
+      player.setPlaybackSpeed(nextPlaybackSpeed(player.playbackParameters.speed))
+      return Futures.immediateFuture(SessionResult(SessionResult.RESULT_SUCCESS))
+    }
     val command = CustomCommand.parse(customCommand, args)
       ?: return super.onCustomCommand(session, controller, customCommand, args)
     when (command) {

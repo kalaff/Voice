@@ -317,6 +317,7 @@
     <string name="playback.speed.decrease">Mai încet</string>
     <string name="playback.speed.increase">Mai repede</string>
     <string name="playback.speed.title">Viteză de redare</string>
+    <string name="playback.speed.use_for_all">Folosește pentru toate cărțile</string>
     <string name="playback.volume_boost.off">Dezactivat</string>
     <string name="review.prompt.action.feedback">Trimite feedback</string>
     <string name="review.prompt.action.later">Nu acum</string>
@@ -371,6 +372,8 @@
     <string name="settings.playback.auto_rewind.off">Dezactivat</string>
     <string name="settings.playback.auto_rewind.summary">Sare puțin înapoi la reluare, ca să nu pierzi firul</string>
     <string name="settings.playback.auto_rewind.title">Derulare înapoi automată</string>
+    <string name="settings.playback.global_speed.summary">O viteză pentru toate cărțile. Dezactiveaz-o, ca fiecare carte să rămână la viteza ei.</string>
+    <string name="settings.playback.global_speed.title">Viteză de redare globală</string>
     <string name="settings.playback.lock_screen_slider.summary">Derulează prin capitol de pe ecranul de blocare și din notificare. Dezactiveaz-o, ca o atingere din greșeală să nu te mute de unde ai rămas.</string>
     <string name="settings.playback.lock_screen_slider.title">Bara de pe ecranul de blocare</string>
     <string name="settings.playback.play_together.summary">Continuă redarea când o altă aplicație face sunet. Nici apelurile și alarmele nu vor opri Voice.</string>

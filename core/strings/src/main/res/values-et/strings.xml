@@ -302,6 +302,7 @@
     <string name="playback.speed.decrease">Aeglasemalt</string>
     <string name="playback.speed.increase">Kiiremini</string>
     <string name="playback.speed.title">Taasesituse kiirus</string>
+    <string name="playback.speed.use_for_all">Kasuta kõigi raamatute jaoks</string>
     <string name="playback.volume_boost.off">Väljas</string>
     <string name="review.prompt.action.feedback">Jaga tagasisidet</string>
     <string name="review.prompt.action.later">Mitte praegu</string>
@@ -355,6 +356,8 @@
     <string name="settings.playback.auto_rewind.off">Väljas</string>
     <string name="settings.playback.auto_rewind.summary">Jätkamisel kerib veidi tagasi, et sa järge ei kaotaks</string>
     <string name="settings.playback.auto_rewind.title">Automaatne tagasikerimine</string>
+    <string name="settings.playback.global_speed.summary">Üks kiirus kõigile raamatutele. Lülita see välja, et iga raamat säilitaks oma kiiruse.</string>
+    <string name="settings.playback.global_speed.title">Üldine taasesituse kiirus</string>
     <string name="settings.playback.lock_screen_slider.summary">Keri peatükis lukustuskuvalt ja teavitusest. Lülita see välja, et juhuslik puudutus sind järjest välja ei viiks.</string>
     <string name="settings.playback.lock_screen_slider.title">Liugur lukustuskuval</string>
     <string name="settings.playback.play_together.summary">Jätkab esitust, kui mõni muu rakendus heli teeb. Kõned ja äratused ei peata Voice\'i ka.</string>

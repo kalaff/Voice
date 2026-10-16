@@ -332,6 +332,7 @@
     <string name="playback.speed.decrease">Повільніше</string>
     <string name="playback.speed.increase">Швидше</string>
     <string name="playback.speed.title">Швидкість відтворення</string>
+    <string name="playback.speed.use_for_all">Використовувати для всіх книг</string>
     <string name="playback.volume_boost.off">Вимкнено</string>
     <string name="review.prompt.action.feedback">Залишити відгук</string>
     <string name="review.prompt.action.later">Не зараз</string>
@@ -387,6 +388,8 @@
     <string name="settings.playback.auto_rewind.off">Вимкнено</string>
     <string name="settings.playback.auto_rewind.summary">Під час відновлення трохи відмотує назад, щоб ви не втратили нитку</string>
     <string name="settings.playback.auto_rewind.title">Автовідмотування назад</string>
+    <string name="settings.playback.global_speed.summary">Одна швидкість для всіх книг. Вимкніть, щоб кожна книга відтворювалася зі своєю швидкістю.</string>
+    <string name="settings.playback.global_speed.title">Загальна швидкість відтворення</string>
     <string name="settings.playback.lock_screen_slider.summary">Перемотуйте розділ з екрана блокування та сповіщення. Вимкніть, щоб випадковий дотик не відвів вас від місця, де ви зупинилися.</string>
     <string name="settings.playback.lock_screen_slider.title">Повзунок на екрані блокування</string>
     <string name="settings.playback.play_together.summary">Продовжує відтворення, коли звук видає інший додаток. Дзвінки та будильники також не ставлять Voice на паузу.</string>

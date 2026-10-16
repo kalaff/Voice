@@ -332,6 +332,7 @@
     <string name="playback.speed.decrease">Wolniej</string>
     <string name="playback.speed.increase">Szybciej</string>
     <string name="playback.speed.title">Szybkość odtwarzania</string>
+    <string name="playback.speed.use_for_all">Użyj dla wszystkich książek</string>
     <string name="playback.volume_boost.off">Wyłączone</string>
     <string name="review.prompt.action.feedback">Podziel się opinią</string>
     <string name="review.prompt.action.later">Nie teraz</string>
@@ -387,6 +388,8 @@
     <string name="settings.playback.auto_rewind.off">Wyłączone</string>
     <string name="settings.playback.auto_rewind.summary">Po wznowieniu cofa się trochę, żeby nie zgubić wątku</string>
     <string name="settings.playback.auto_rewind.title">Automatyczne cofnięcie</string>
+    <string name="settings.playback.global_speed.summary">Jedna szybkość dla wszystkich książek. Wyłącz to, żeby każda książka zachowała własną szybkość.</string>
+    <string name="settings.playback.global_speed.title">Globalna szybkość odtwarzania</string>
     <string name="settings.playback.lock_screen_slider.summary">Przewijaj rozdział z ekranu blokady i powiadomienia. Wyłącz go, żeby przypadkowy dotyk nie przesunął odtwarzania w inne miejsce.</string>
     <string name="settings.playback.lock_screen_slider.title">Suwak na ekranie blokady</string>
     <string name="settings.playback.play_together.summary">Kontynuuj odtwarzanie, gdy inna aplikacja włącza dźwięk. Połączenia i alarmy także nie zatrzymają Voice.</string>

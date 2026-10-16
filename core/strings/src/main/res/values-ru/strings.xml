@@ -332,6 +332,7 @@
     <string name="playback.speed.decrease">Медленнее</string>
     <string name="playback.speed.increase">Быстрее</string>
     <string name="playback.speed.title">Скорость воспроизведения</string>
+    <string name="playback.speed.use_for_all">Использовать для всех книг</string>
     <string name="playback.volume_boost.off">Выкл.</string>
     <string name="review.prompt.action.feedback">Оставить отзыв</string>
     <string name="review.prompt.action.later">Не сейчас</string>
@@ -387,6 +388,8 @@
     <string name="settings.playback.auto_rewind.off">Выкл.</string>
     <string name="settings.playback.auto_rewind.summary">При возобновлении немного отматывает назад, чтобы вы не потеряли нить</string>
     <string name="settings.playback.auto_rewind.title">Автоперемотка назад</string>
+    <string name="settings.playback.global_speed.summary">Одна скорость для всех книг. Отключите, чтобы каждая книга воспроизводилась со своей скоростью.</string>
+    <string name="settings.playback.global_speed.title">Общая скорость воспроизведения</string>
     <string name="settings.playback.lock_screen_slider.summary">Перематывайте главу с экрана блокировки и из уведомления. Отключите, чтобы случайное касание не уводило вас с места, где вы остановились.</string>
     <string name="settings.playback.lock_screen_slider.title">Ползунок на экране блокировки</string>
     <string name="settings.playback.play_together.summary">Продолжает воспроизведение, когда звук издаёт другое приложение. Звонки и будильники тоже не ставят Voice на паузу.</string>

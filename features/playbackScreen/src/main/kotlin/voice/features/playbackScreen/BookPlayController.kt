@@ -94,6 +94,7 @@ fun BookPlayScreen(bookId: BookId) {
         SpeedSheet(
           dialogState = dialogState,
           onSpeedChange = viewModel::onPlaybackSpeedChanged,
+          onOverrideToggle = viewModel::onGlobalSpeedToggle,
           onDismiss = viewModel::dismissDialog,
         )
       }

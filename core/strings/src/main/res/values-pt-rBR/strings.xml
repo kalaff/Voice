@@ -317,6 +317,7 @@
     <string name="playback.speed.decrease">Mais devagar</string>
     <string name="playback.speed.increase">Mais rápido</string>
     <string name="playback.speed.title">Velocidade de reprodução</string>
+    <string name="playback.speed.use_for_all">Usar para todos os livros</string>
     <string name="playback.volume_boost.off">Desligado</string>
     <string name="review.prompt.action.feedback">Enviar feedback</string>
     <string name="review.prompt.action.later">Agora não</string>
@@ -371,6 +372,8 @@
     <string name="settings.playback.auto_rewind.off">Desligado</string>
     <string name="settings.playback.auto_rewind.summary">Volta um pouco ao retomar, para você não perder o fio da meada</string>
     <string name="settings.playback.auto_rewind.title">Retrocesso automático</string>
+    <string name="settings.playback.global_speed.summary">Uma velocidade para todos os livros. Desative para manter cada livro na sua própria velocidade.</string>
+    <string name="settings.playback.global_speed.title">Velocidade global de reprodução</string>
     <string name="settings.playback.lock_screen_slider.summary">Avance ou volte no capítulo pela tela de bloqueio e pela notificação. Desative para que um toque sem querer não faça você perder onde parou.</string>
     <string name="settings.playback.lock_screen_slider.title">Barra na tela de bloqueio</string>
     <string name="settings.playback.play_together.summary">Continua reproduzindo quando outro app fizer som. Chamadas e alarmes também não pausam o Voice.</string>

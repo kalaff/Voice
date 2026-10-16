@@ -2,10 +2,12 @@ package voice.core.playback.session
 
 import android.content.Context
 import android.os.Bundle
+import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
 import androidx.media3.session.MediaSession
 import androidx.media3.session.SessionCommand
 import androidx.media3.session.SessionError
+import androidx.media3.session.SessionResult
 import androidx.media3.test.utils.TestExoPlayerBuilder
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +21,7 @@ import org.junit.After
 import org.junit.runner.RunWith
 import voice.core.data.BookId
 import voice.core.playback.MemoryDataStore
+import voice.core.playback.player.VoicePlayer
 import voice.core.playback.session.search.BookSearchParser
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -30,6 +33,7 @@ class LibrarySessionCallbackTest {
 
   private val context = ApplicationProvider.getApplicationContext<Context>()
   private val player = TestExoPlayerBuilder(context).build()
+  private val voicePlayer = mockk<VoicePlayer>(relaxed = true)
   private val session = MediaSession.Builder(context, player).build()
   private val scope = TestScope()
   private val lockScreenSliderStore = MemoryDataStore(true)
@@ -40,7 +44,7 @@ class LibrarySessionCallbackTest {
   private val callback = LibrarySessionCallback(
     mediaItemProvider = mockk(),
     scope = scope.backgroundScope,
-    player = mockk(relaxed = true),
+    player = voicePlayer,
     bookSearchParser = BookSearchParser(),
     bookSearchHandler = mockk(),
     currentBookStoreId = MemoryDataStore<BookId?>(null),
@@ -81,6 +85,36 @@ class LibrarySessionCallbackTest {
     val result = callback.onCustomCommand(session, controller(context.packageName, context.applicationInfo.uid), customCommand, args)
 
     assertEquals(SessionError.ERROR_NOT_SUPPORTED, result.get().resultCode)
+  }
+
+  @Test
+  fun `the cycle speed command is authorized`() {
+    val cycleCommand = SessionCommand(CustomCommand.CYCLE_SPEED_ACTION, Bundle.EMPTY)
+
+    val result = callback.onConnect(session, controller(context.packageName, context.applicationInfo.uid))
+
+    assertTrue(result.availableSessionCommands.contains(cycleCommand))
+  }
+
+  @Test
+  fun `the cycle speed command moves to the next preset`() {
+    every { voicePlayer.playbackParameters } returns PlaybackParameters(1.3F)
+    val cycleCommand = SessionCommand(CustomCommand.CYCLE_SPEED_ACTION, Bundle.EMPTY)
+
+    val result = callback.onCustomCommand(session, controller(context.packageName, context.applicationInfo.uid), cycleCommand, Bundle.EMPTY)
+
+    verify { voicePlayer.setPlaybackSpeed(1.5F) }
+    assertEquals(SessionResult.RESULT_SUCCESS, result.get().resultCode)
+  }
+
+  @Test
+  fun `the cycle speed command wraps after the fastest preset`() {
+    every { voicePlayer.playbackParameters } returns PlaybackParameters(2F)
+    val cycleCommand = SessionCommand(CustomCommand.CYCLE_SPEED_ACTION, Bundle.EMPTY)
+
+    callback.onCustomCommand(session, controller(context.packageName, context.applicationInfo.uid), cycleCommand, Bundle.EMPTY)
+
+    verify { voicePlayer.setPlaybackSpeed(0.75F) }
   }
 
   @Test
