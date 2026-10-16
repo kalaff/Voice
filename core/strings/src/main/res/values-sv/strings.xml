@@ -38,6 +38,14 @@
         <item quantity="one">%1$s · %2$d bok</item>
         <item quantity="other">%1$s · %2$d böcker</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d bok och %2$d bokmärken återställda</item>
+        <item quantity="other">%1$d böcker och %2$d bokmärken återställda</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d bok fanns inte i det här biblioteket</item>
+        <item quantity="other">%1$d böcker fanns inte i det här biblioteket</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Lösenord</string>
     <string name="audiobookshelf.login.password.hide">Dölj lösenord</string>
     <string name="audiobookshelf.login.password.show">Visa lösenord</string>
@@ -59,6 +67,11 @@
     <string name="audiobookshelf.status.needs_login">Servern vill att du loggar in igen</string>
     <string name="audiobookshelf.status.offline">Servern går inte att nå just nu. Nedladdade böcker kan fortfarande spelas.</string>
     <string name="audiobookshelf.status.syncing">Synkroniserar…</string>
+    <string name="backup.export">Exportera till fil</string>
+    <string name="backup.export_done">Sparat</string>
+    <string name="backup.import">Importera från fil</string>
+    <string name="backup.import_failed">Den filen är inte en säkerhetskopia från Voice.</string>
+    <string name="backup.subtitle">Dina framsteg och bokmärken sparas i en fil som du bestämmer över. Själva ljudfilerna ingår inte.</string>
     <string name="book.category.action.mark_completed">Markera som färdiglyssnad</string>
     <string name="book.category.action.mark_current">Markera som pågående</string>
     <string name="book.category.action.mark_not_started">Markera som inte påbörjad</string>
@@ -350,6 +363,8 @@
     <string name="settings.auto_sleep_timer.summary">Starta en insomningstimer automatiskt när uppspelningen börjar mellan %1$s och %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk insomningstimer</string>
     <string name="settings.library.audiobookshelf.summary">Strömma böckerna från din egen server</string>
+    <string name="settings.library.backup.summary">Spara dina framsteg och bokmärken i en fil</string>
+    <string name="settings.library.backup.title">Säkerhetskopia</string>
     <string name="settings.library.folders.summary">Hantera mappar som genomsöks efter ljudböcker</string>
     <string name="settings.library.layout.grid">Rutnät</string>
     <string name="settings.library.layout.list">Lista</string>

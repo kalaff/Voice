@@ -41,6 +41,16 @@
         <item quantity="many">%1$s · %2$d libri</item>
         <item quantity="other">%1$s · %2$d libri</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d libro e %2$d segnalibro ripristinati</item>
+        <item quantity="many">%1$d libri e %2$d segnalibri ripristinati</item>
+        <item quantity="other">%1$d libri e %2$d segnalibri ripristinati</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d libro non era in questa libreria</item>
+        <item quantity="many">%1$d libri non erano in questa libreria</item>
+        <item quantity="other">%1$d libri non erano in questa libreria</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Password</string>
     <string name="audiobookshelf.login.password.hide">Nascondi password</string>
     <string name="audiobookshelf.login.password.show">Mostra password</string>
@@ -62,6 +72,11 @@
     <string name="audiobookshelf.status.needs_login">Il server ti chiede di accedere di nuovo</string>
     <string name="audiobookshelf.status.offline">Il server non è raggiungibile al momento. Puoi comunque ascoltare i libri scaricati.</string>
     <string name="audiobookshelf.status.syncing">Sincronizzazione…</string>
+    <string name="backup.export">Esporta in un file</string>
+    <string name="backup.export_done">Salvato</string>
+    <string name="backup.import">Importa da un file</string>
+    <string name="backup.import_failed">Quel file non è un backup di Voice.</string>
+    <string name="backup.subtitle">Mantiene il punto in cui sei e i tuoi segnalibri in un file che controlli tu. I file audio in sé non ne fanno parte.</string>
     <string name="book.category.action.mark_completed">Segna come completato</string>
     <string name="book.category.action.mark_current">Contrassegna come corrente</string>
     <string name="book.category.action.mark_not_started">Contrassegna come non ancora iniziato</string>
@@ -366,6 +381,8 @@
     <string name="settings.auto_sleep_timer.summary">Avvia automaticamente un timer di spegnimento automatico quando la riproduzione inizia tra %1$s e %2$s</string>
     <string name="settings.auto_sleep_timer.title">Timer di spegnimento automatico</string>
     <string name="settings.library.audiobookshelf.summary">Ascolta i libri del tuo server</string>
+    <string name="settings.library.backup.summary">Salva i tuoi progressi e i tuoi segnalibri in un file</string>
+    <string name="settings.library.backup.title">Backup</string>
     <string name="settings.library.folders.summary">Gestisci cartelle audiolibri</string>
     <string name="settings.library.layout.grid">Griglia</string>
     <string name="settings.library.layout.list">Elenco</string>

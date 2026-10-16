@@ -41,6 +41,16 @@
         <item quantity="many">%1$s · %2$d libros</item>
         <item quantity="other">%1$s · %2$d libros</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d libro y %2$d marcador restaurados</item>
+        <item quantity="many">%1$d libros y %2$d marcadores restaurados</item>
+        <item quantity="other">%1$d libros y %2$d marcadores restaurados</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d libro no estaba en esta biblioteca</item>
+        <item quantity="many">%1$d libros no estaban en esta biblioteca</item>
+        <item quantity="other">%1$d libros no estaban en esta biblioteca</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Contraseña</string>
     <string name="audiobookshelf.login.password.hide">Ocultar contraseña</string>
     <string name="audiobookshelf.login.password.show">Mostrar contraseña</string>
@@ -62,6 +72,11 @@
     <string name="audiobookshelf.status.needs_login">El servidor te pide que vuelvas a iniciar sesión</string>
     <string name="audiobookshelf.status.offline">No se puede conectar con el servidor ahora mismo. Puedes seguir escuchando los libros descargados.</string>
     <string name="audiobookshelf.status.syncing">Sincronizando…</string>
+    <string name="backup.export">Exportar a un archivo</string>
+    <string name="backup.export_done">Guardado</string>
+    <string name="backup.import">Importar desde un archivo</string>
+    <string name="backup.import_failed">Ese archivo no es una copia de seguridad de Voice.</string>
+    <string name="backup.subtitle">Conserva por dónde vas y tus marcadores en un archivo que controlas. Los archivos de audio en sí no forman parte de él.</string>
     <string name="book.category.action.mark_completed">Marcar como completado</string>
     <string name="book.category.action.mark_current">Marcar como actual</string>
     <string name="book.category.action.mark_not_started">Marcar como no comenzado</string>
@@ -366,6 +381,8 @@
     <string name="settings.auto_sleep_timer.summary">Activa automáticamente el temporizador al iniciar la reproducción entre las %1$s y %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizador automático</string>
     <string name="settings.library.audiobookshelf.summary">Escucha los libros de tu propio servidor</string>
+    <string name="settings.library.backup.summary">Guarda tu progreso y tus marcadores en un archivo</string>
+    <string name="settings.library.backup.title">Copia de seguridad</string>
     <string name="settings.library.folders.summary">Administrar directorios escaneados en busca de audiolibros</string>
     <string name="settings.library.layout.grid">Cuadrícula</string>
     <string name="settings.library.layout.list">Lista</string>

@@ -44,6 +44,18 @@
         <item quantity="many">%1$s · %2$d książek</item>
         <item quantity="other">%1$s · %2$d książek</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d książka i %2$d zakładki zostały przywrócone</item>
+        <item quantity="few">%1$d książki i %2$d zakładki zostały przywrócone</item>
+        <item quantity="many">%1$d książek i %2$d zakładek zostało przywróconych</item>
+        <item quantity="other">%1$d książek i %2$d zakładek zostało przywróconych</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d książka nie była w tej bibliotece</item>
+        <item quantity="few">%1$d książki nie były w tej bibliotece</item>
+        <item quantity="many">%1$d książek nie było w tej bibliotece</item>
+        <item quantity="other">%1$d książek nie było w tej bibliotece</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Hasło</string>
     <string name="audiobookshelf.login.password.hide">Ukryj hasło</string>
     <string name="audiobookshelf.login.password.show">Pokaż hasło</string>
@@ -65,6 +77,11 @@
     <string name="audiobookshelf.status.needs_login">Serwer prosi o ponowne zalogowanie</string>
     <string name="audiobookshelf.status.offline">Nie można teraz połączyć się z serwerem. Pobranych książek nadal możesz słuchać.</string>
     <string name="audiobookshelf.status.syncing">Synchronizacja…</string>
+    <string name="backup.export">Eksportuj do pliku</string>
+    <string name="backup.export_done">Zapisano</string>
+    <string name="backup.import">Importuj z pliku</string>
+    <string name="backup.import_failed">Ten plik nie jest kopią zapasową Voice.</string>
+    <string name="backup.subtitle">Zachowuje twoje miejsce i zakładki w pliku, który jest twój. Same pliki audio nie są jego częścią.</string>
     <string name="book.category.action.mark_completed">Oznacz jako Ukończona</string>
     <string name="book.category.action.mark_current">Oznacz jako aktualna</string>
     <string name="book.category.action.mark_not_started">Oznacz jako nierozpoczęta</string>
@@ -382,6 +399,8 @@
     <string name="settings.auto_sleep_timer.summary">Automatycznie uruchamia wyłącznik czasowy po rozpoczęciu odtwarzania pomiędzy %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatyczny Wyłącznik Czasowy</string>
     <string name="settings.library.audiobookshelf.summary">Słuchaj książek prosto z własnego serwera</string>
+    <string name="settings.library.backup.summary">Zapisz postęp i zakładki do pliku</string>
+    <string name="settings.library.backup.title">Kopia zapasowa</string>
     <string name="settings.library.folders.summary">Zarządzaj folderami skanowanymi w poszukiwaniu audiobooków</string>
     <string name="settings.library.layout.grid">Siatka</string>
     <string name="settings.library.layout.list">Lista</string>

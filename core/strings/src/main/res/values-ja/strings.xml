@@ -35,6 +35,12 @@
     <plurals name="audiobookshelf.login.library_chip">
         <item quantity="other">%1$s · %2$d 冊</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="other">%1$d 冊の本と %2$d 件のブックマークを復元しました</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="other">%1$d 冊の本はこのライブラリにありませんでした</item>
+    </plurals>
     <string name="audiobookshelf.login.password">パスワード</string>
     <string name="audiobookshelf.login.password.hide">パスワードを非表示</string>
     <string name="audiobookshelf.login.password.show">パスワードを表示</string>
@@ -56,6 +62,11 @@
     <string name="audiobookshelf.status.needs_login">サーバーにもう一度ログインしてください</string>
     <string name="audiobookshelf.status.offline">現在サーバーに接続できません。ダウンロード済みの本は引き続き再生できます。</string>
     <string name="audiobookshelf.status.syncing">同期中…</string>
+    <string name="backup.export">ファイルに書き出す</string>
+    <string name="backup.export_done">保存しました</string>
+    <string name="backup.import">ファイルから読み込む</string>
+    <string name="backup.import_failed">そのファイルは Voice のバックアップではありません。</string>
+    <string name="backup.subtitle">再生位置とブックマークを、自分で管理できるファイルに保存します。音声ファイル自体は含まれません。</string>
     <string name="book.category.action.mark_completed">完了としてマーク</string>
     <string name="book.category.action.mark_current">現在としてマーク</string>
     <string name="book.category.action.mark_not_started">未再生としてマーク</string>
@@ -334,6 +345,8 @@
     <string name="settings.auto_sleep_timer.summary">%1$s から %2$s の間に再生が始まった場合、自動的にスリープタイマーを開始します</string>
     <string name="settings.auto_sleep_timer.title">自動スリープタイマー</string>
     <string name="settings.library.audiobookshelf.summary">自分のサーバーの本をストリーミング再生</string>
+    <string name="settings.library.backup.summary">進み具合とブックマークをファイルに保存</string>
+    <string name="settings.library.backup.title">バックアップ</string>
     <string name="settings.library.folders.summary">オーディオブックをスキャンするフォルダーを管理</string>
     <string name="settings.library.layout.grid">グリッド</string>
     <string name="settings.library.layout.list">リスト</string>

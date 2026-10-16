@@ -44,6 +44,18 @@
         <item quantity="many">%1$s · %2$d книг</item>
         <item quantity="other">%1$s · %2$d книг</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d книга і %2$d закладок відновлені</item>
+        <item quantity="few">%1$d книги і %2$d закладок відновлені</item>
+        <item quantity="many">%1$d книг і %2$d закладок відновлені</item>
+        <item quantity="other">%1$d книг і %2$d закладок відновлені</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d книга не знайдена в цій бібліотеці</item>
+        <item quantity="few">%1$d книги не знайдені в цій бібліотеці</item>
+        <item quantity="many">%1$d книг не знайдено в цій бібліотеці</item>
+        <item quantity="other">%1$d книг не знайдено в цій бібліотеці</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Пароль</string>
     <string name="audiobookshelf.login.password.hide">Сховати пароль</string>
     <string name="audiobookshelf.login.password.show">Показати пароль</string>
@@ -65,6 +77,11 @@
     <string name="audiobookshelf.status.needs_login">Сервер просить увійти знову</string>
     <string name="audiobookshelf.status.offline">Сервер зараз недоступний. Завантажені книги можна слухати й далі.</string>
     <string name="audiobookshelf.status.syncing">Синхронізація…</string>
+    <string name="backup.export">Експортувати у файл</string>
+    <string name="backup.export_done">Збережено</string>
+    <string name="backup.import">Імпортувати з файлу</string>
+    <string name="backup.import_failed">Це не резервна копія Voice.</string>
+    <string name="backup.subtitle">Зберігає ваш прогрес і закладки у файлі, який ви контролюєте. Самі аудіофайли до нього не входять.</string>
     <string name="book.category.action.mark_completed">Позначити як завершене</string>
     <string name="book.category.action.mark_current">Позначити як поточне</string>
     <string name="book.category.action.mark_not_started">Позначити як ще не почате</string>
@@ -382,6 +399,8 @@
     <string name="settings.auto_sleep_timer.summary">Автоматично запустити таймер сну, коли програш починається між %1$s та %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматичний таймер сну</string>
     <string name="settings.library.audiobookshelf.summary">Слухайте книги просто зі свого сервера</string>
+    <string name="settings.library.backup.summary">Збережіть прогрес і закладки у файл</string>
+    <string name="settings.library.backup.title">Резервна копія</string>
     <string name="settings.library.folders.summary">Налаштування папок, які скануються для пошуку аудіокних</string>
     <string name="settings.library.layout.grid">Сітка</string>
     <string name="settings.library.layout.list">Список</string>

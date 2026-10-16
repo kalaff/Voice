@@ -115,6 +115,11 @@ sealed interface Destination {
   data object BatteryOptimization : Destination
 
   @Serializable
+  data object Backup : Compose {
+    override val trackingName: String get() = "Backup"
+  }
+
+  @Serializable
   data class AddContent(val origin: Origin) : Compose {
     override val trackingName: String = "AddContent"
   }

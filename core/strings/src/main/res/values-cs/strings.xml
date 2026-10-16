@@ -44,6 +44,18 @@
         <item quantity="many">%1$s · %2$d knih</item>
         <item quantity="other">%1$s · %2$d knih</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d kniha a %2$d záložka byly obnoveny</item>
+        <item quantity="few">%1$d knihy a %2$d záložky byly obnoveny</item>
+        <item quantity="many">%1$d knih a %2$d záložek byly obnoveny</item>
+        <item quantity="other">%1$d knih a %2$d záložek byly obnoveny</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d kniha nebyla v této knihovně</item>
+        <item quantity="few">%1$d knihy nebyly v této knihovně</item>
+        <item quantity="many">%1$d knih nebylo v této knihovně</item>
+        <item quantity="other">%1$d knih nebylo v této knihovně</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Heslo</string>
     <string name="audiobookshelf.login.password.hide">Skrýt heslo</string>
     <string name="audiobookshelf.login.password.show">Zobrazit heslo</string>
@@ -65,6 +77,11 @@
     <string name="audiobookshelf.status.needs_login">Server vyžaduje nové přihlášení</string>
     <string name="audiobookshelf.status.offline">Server teď není dostupný. Stažené knihy můžete poslouchat dál.</string>
     <string name="audiobookshelf.status.syncing">Synchronizace…</string>
+    <string name="backup.export">Exportovat do souboru</string>
+    <string name="backup.export_done">Uloženo</string>
+    <string name="backup.import">Importovat ze souboru</string>
+    <string name="backup.import_failed">Tento soubor není záloha Voice.</string>
+    <string name="backup.subtitle">Uchovává místo, kde jste skončili, a vaše záložky v souboru, který máte pod kontrolou. Samotné zvukové soubory do něj nepatří.</string>
     <string name="book.category.action.mark_completed">Označit jako dokončené</string>
     <string name="book.category.action.mark_current">Označit knihu jako aktuální</string>
     <string name="book.category.action.mark_not_started">Označit jako dosud nezahájené</string>
@@ -382,6 +399,8 @@
     <string name="settings.auto_sleep_timer.summary">Automatické spuštění časovače spánku při zahájení přehrávání mezi %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatický časovač spánku</string>
     <string name="settings.library.audiobookshelf.summary">Streamujte knihy z vlastního serveru</string>
+    <string name="settings.library.backup.summary">Uložte svůj postup a záložky do souboru</string>
+    <string name="settings.library.backup.title">Záloha</string>
     <string name="settings.library.folders.summary">Spravovat složky pro prohledávání audioknih</string>
     <string name="settings.library.layout.grid">Mřížka</string>
     <string name="settings.library.layout.list">Seznam</string>

@@ -44,6 +44,18 @@
         <item quantity="many">%1$s · %2$d kníh</item>
         <item quantity="other">%1$s · %2$d kníh</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d kniha a %2$d záložiek boli obnovené</item>
+        <item quantity="few">%1$d knihy a %2$d záložiek boli obnovené</item>
+        <item quantity="many">%1$d kníh a %2$d záložiek boli obnovené</item>
+        <item quantity="other">%1$d kníh a %2$d záložiek boli obnovené</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d kniha nie je v tejto knižnici</item>
+        <item quantity="few">%1$d knihy nie sú v tejto knižnici</item>
+        <item quantity="many">%1$d kníh nie je v tejto knižnici</item>
+        <item quantity="other">%1$d kníh nie je v tejto knižnici</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Heslo</string>
     <string name="audiobookshelf.login.password.hide">Skryť heslo</string>
     <string name="audiobookshelf.login.password.show">Zobraziť heslo</string>
@@ -65,6 +77,11 @@
     <string name="audiobookshelf.status.needs_login">Server vyžaduje opätovné prihlásenie</string>
     <string name="audiobookshelf.status.offline">Server je teraz nedostupný. Stiahnuté knihy môžete počúvať ďalej.</string>
     <string name="audiobookshelf.status.syncing">Synchronizácia…</string>
+    <string name="backup.export">Exportovať do súboru</string>
+    <string name="backup.export_done">Uložené</string>
+    <string name="backup.import">Importovať zo súboru</string>
+    <string name="backup.import_failed">Tento súbor nie je záloha aplikácie Voice.</string>
+    <string name="backup.subtitle">Uchová váš postup a záložky v súbore, ktorý máte pod kontrolou. Samotné zvukové súbory v ňom nie sú.</string>
     <string name="book.category.action.mark_completed">Označiť ako vypočuté</string>
     <string name="book.category.action.mark_current">Označiť ako rozpočúvané</string>
     <string name="book.category.action.mark_not_started">Označiť ako ešte nepočúvané</string>
@@ -382,6 +399,8 @@
     <string name="settings.auto_sleep_timer.summary">Automaticky aktivovať časovač zastavenia, ak sa prehrávanie spustí medzi %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatický časovač zastavenia</string>
     <string name="settings.library.audiobookshelf.summary">Streamujte knihy z vlastného servera</string>
+    <string name="settings.library.backup.summary">Uložte si postup a záložky do súboru</string>
+    <string name="settings.library.backup.title">Záloha</string>
     <string name="settings.library.folders.summary">Spravovať priečinky určené na vyhľadávanie zvukových kníh</string>
     <string name="settings.library.layout.grid">Mriežka</string>
     <string name="settings.library.layout.list">Zoznam</string>

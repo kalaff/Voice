@@ -152,6 +152,7 @@ private fun LazyListScope.sections(
       folderNames = viewState.folderNames,
       audiobookshelfServer = viewState.audiobookshelfServer,
       showAudiobookshelf = viewState.showAudiobookshelf,
+      onBackupClick = listener::openBackup,
       useGrid = viewState.useGrid,
       onFoldersClick = listener::openFolderPicker,
       onAudiobookshelfClick = listener::openAudiobookshelf,

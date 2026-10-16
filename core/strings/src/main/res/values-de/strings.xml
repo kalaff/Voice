@@ -38,6 +38,14 @@
         <item quantity="one">%1$s · %2$d Buch</item>
         <item quantity="other">%1$s · %2$d Bücher</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d Buch und %2$d Lesezeichen wiederhergestellt</item>
+        <item quantity="other">%1$d Bücher und %2$d Lesezeichen wiederhergestellt</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d Buch war nicht in dieser Bibliothek</item>
+        <item quantity="other">%1$d Bücher waren nicht in dieser Bibliothek</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Passwort</string>
     <string name="audiobookshelf.login.password.hide">Passwort ausblenden</string>
     <string name="audiobookshelf.login.password.show">Passwort anzeigen</string>
@@ -59,6 +67,11 @@
     <string name="audiobookshelf.status.needs_login">Der Server möchte, dass Du Dich erneut anmeldest</string>
     <string name="audiobookshelf.status.offline">Der Server ist gerade nicht erreichbar. Heruntergeladene Bücher kannst Du trotzdem hören.</string>
     <string name="audiobookshelf.status.syncing">Wird synchronisiert…</string>
+    <string name="backup.export">In Datei exportieren</string>
+    <string name="backup.export_done">Gespeichert</string>
+    <string name="backup.import">Aus Datei importieren</string>
+    <string name="backup.import_failed">Diese Datei ist keine Voice-Sicherung.</string>
+    <string name="backup.subtitle">Bewahrt Deine Stelle und Deine Lesezeichen in einer Datei, die Du kontrollierst. Die Audiodateien selbst sind nicht Teil davon.</string>
     <string name="book.category.action.mark_completed">Als „Abgeschlossen“ markieren</string>
     <string name="book.category.action.mark_current">Als „Aktuell“ markieren</string>
     <string name="book.category.action.mark_not_started">Als „Neu“ markieren</string>
@@ -350,6 +363,8 @@
     <string name="settings.auto_sleep_timer.summary">Den Einschlaf-Timer automatisch starten, wenn die Wiedergabe zwischen %1$s und %2$s Uhr beginnt</string>
     <string name="settings.auto_sleep_timer.title">Automatischer Einschlaf-Timer</string>
     <string name="settings.library.audiobookshelf.summary">Bücher von Deinem eigenen Server streamen</string>
+    <string name="settings.library.backup.summary">Deinen Fortschritt und Deine Lesezeichen in eine Datei speichern</string>
+    <string name="settings.library.backup.title">Sicherung</string>
     <string name="settings.library.folders.summary">Ordner verwalten, die nach Hörbüchern durchsucht werden sollen</string>
     <string name="settings.library.layout.grid">Raster</string>
     <string name="settings.library.layout.list">Liste</string>
