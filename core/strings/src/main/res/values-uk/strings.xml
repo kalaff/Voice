@@ -22,6 +22,7 @@
     <string name="audiobookshelf.login.error.certificate">Ваш телефон не довіряє сертифікату цього сервера.</string>
     <string name="audiobookshelf.login.error.credentials">Неправильне ім’я користувача або пароль.</string>
     <string name="audiobookshelf.login.error.failed">Не вдалося увійти. Спробуйте ще раз.</string>
+    <string name="audiobookshelf.login.error.local_network">Voice потрібен дозвіл для доступу до локальної мережі. Дозвольте його в налаштуваннях пристрою, щоб підключитися до цього сервера.</string>
     <string name="audiobookshelf.login.error.not_found">Voice не знаходить за цією адресою сервер Audiobookshelf. Ви підключені до потрібної мережі?</string>
     <string name="audiobookshelf.login.error.not_set_up">Цей сервер ще не налаштовано. Спершу завершіть налаштування в його вебзастосунку.</string>
     <string name="audiobookshelf.login.error.other_account">Це інший обліковий запис. Щоб змінити обліковий запис, спершу вийдіть.</string>

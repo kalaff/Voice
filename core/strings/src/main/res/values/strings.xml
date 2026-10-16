@@ -39,6 +39,8 @@
     <string name="audiobookshelf.login.error.credentials">That username or password isn\'t right.</string>
     <!-- Error under the password field when signing in failed for an unknown reason. -->
     <string name="audiobookshelf.login.error.failed">Signing in didn\'t work. Try again.</string>
+    <!-- Error under the server address when the listener denied the local network permission that Android 17 needs to reach a server at home. -->
+    <string name="audiobookshelf.login.error.local_network">Voice needs permission to reach the local network. Allow it in your device settings to connect to this server.</string>
     <!-- Error under the server address when nothing at that address answered like an Audiobookshelf server. Many servers are only reachable at home or over a VPN. -->
     <string name="audiobookshelf.login.error.not_found">Voice can\'t reach an Audiobookshelf server there. Are you on the right network?</string>
     <!-- Error under the server address when the server was installed, but its first setup in the web app isn't done. -->

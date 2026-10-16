@@ -19,6 +19,7 @@
     <string name="audiobookshelf.login.error.certificate">您的手机不信任此服务器的证书。</string>
     <string name="audiobookshelf.login.error.credentials">用户名或密码不正确。</string>
     <string name="audiobookshelf.login.error.failed">登录失败，请重试。</string>
+    <string name="audiobookshelf.login.error.local_network">Voice 需要权限才能访问本地网络。请在您的设备设置中给予权限，以连接到此服务器。</string>
     <string name="audiobookshelf.login.error.not_found">Voice 无法在该地址连接到 Audiobookshelf 服务器。您连接的网络正确吗？</string>
     <string name="audiobookshelf.login.error.not_set_up">此服务器尚未完成设置。请先在其网页版中完成设置。</string>
     <string name="audiobookshelf.login.error.other_account">这是另一个账号。如需切换账号，请先退出登录。</string>

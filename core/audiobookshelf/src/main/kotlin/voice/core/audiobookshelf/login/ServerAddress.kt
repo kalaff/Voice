@@ -55,3 +55,9 @@ internal fun isLocalHost(host: String): Boolean {
     (octets[0] == 172 && octets[1] in 16..31) ||
     (octets[0] == 100 && octets[1] in 64..127)
 }
+
+/** On Android 17 and up, reaching a host in the local network needs the ACCESS_LOCAL_NETWORK permission. */
+fun needsLocalNetworkPermission(input: String): Boolean {
+  val host = serverUrlCandidates(input).firstOrNull()?.toHttpUrlOrNull()?.host ?: return false
+  return isLocalHost(host)
+}

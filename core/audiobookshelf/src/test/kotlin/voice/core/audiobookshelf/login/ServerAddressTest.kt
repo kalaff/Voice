@@ -47,4 +47,22 @@ class ServerAddressTest {
   fun `blank input has no candidates`() {
     assertEquals(emptyList(), serverUrlCandidates("  "))
   }
+
+  @Test
+  fun `a local server needs the local network permission`() {
+    assertEquals(true, needsLocalNetworkPermission("192.168.1.10:13378"))
+    assertEquals(true, needsLocalNetworkPermission("http://nas.local"))
+    assertEquals(true, needsLocalNetworkPermission("myserver"))
+  }
+
+  @Test
+  fun `a public server does not need the local network permission`() {
+    assertEquals(false, needsLocalNetworkPermission("audiobooks.example.com"))
+    assertEquals(false, needsLocalNetworkPermission("https://abs.example.com/login"))
+  }
+
+  @Test
+  fun `unparseable input does not need the local network permission`() {
+    assertEquals(false, needsLocalNetworkPermission("  "))
+  }
 }

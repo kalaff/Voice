@@ -8,6 +8,8 @@ internal sealed interface AudiobookshelfLoginViewState {
     val address: String = "",
     val busy: Boolean = false,
     val error: AddressError? = null,
+    /** Renewing a connection looks the server up right away; the view runs that through the permission gate. */
+    val autoFind: Boolean = false,
   ) : AudiobookshelfLoginViewState
 
   data class Credentials(
@@ -45,6 +47,7 @@ internal sealed interface AddressError {
   data object CertificateNotTrusted : AddressError
   data object NotSetUp : AddressError
   data class TooOld(val version: String) : AddressError
+  data object LocalNetworkDenied : AddressError
 }
 
 internal enum class CredentialsError {

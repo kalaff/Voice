@@ -2,7 +2,13 @@
 
 package voice.features.audiobookshelf.login
 
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.ColumnScope
@@ -34,6 +40,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.autofill.ContentType
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
@@ -53,6 +60,7 @@ import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.IntoSet
 import dev.zacsweers.metro.Provides
+import voice.core.audiobookshelf.login.needsLocalNetworkPermission
 import voice.core.common.rootGraphAs
 import voice.core.ui.OnboardingButton
 import voice.core.ui.OnboardingScaffold
@@ -93,12 +101,24 @@ private fun AudiobookshelfLogin(
     rootGraphAs<AudiobookshelfLoginGraph>().audiobookshelfLoginViewModelFactory.create(origin, renew)
   }
   BackHandler(onBack = viewModel::onBack)
+  val address = (viewModel.state as? AudiobookshelfLoginViewState.Address)?.address
+  val findServer = rememberLocalNetworkGate(
+    address = address,
+    onFindServer = viewModel::onFindServer,
+    onDeny = viewModel::onLocalNetworkDenied,
+  )
+  LaunchedEffect(viewModel.state) {
+    if ((viewModel.state as? AudiobookshelfLoginViewState.Address)?.autoFind == true) {
+      viewModel.onAutoFindConsumed()
+      findServer()
+    }
+  }
   AudiobookshelfLogin(
     state = viewModel.state,
     origin = origin,
     onBack = viewModel::onBack,
     onAddressChange = viewModel::onAddressChange,
-    onFindServer = viewModel::onFindServer,
+    onFindServer = findServer,
     onUsernameChange = viewModel::onUsernameChange,
     onPasswordChange = viewModel::onPasswordChange,
     onLogin = viewModel::onLogin,
@@ -106,6 +126,32 @@ private fun AudiobookshelfLogin(
     onConnect = viewModel::onConnect,
     onRetryLibraries = viewModel::onRetryLibraries,
   )
+}
+
+/** On Android 17 and up a server at home first needs the local network permission, which only the view can ask for. */
+@Composable
+private fun rememberLocalNetworkGate(
+  address: String?,
+  onFindServer: () -> Unit,
+  onDeny: () -> Unit,
+): () -> Unit {
+  val context = LocalContext.current
+  val launcher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+    if (granted) onFindServer() else onDeny()
+  }
+  return {
+    if (address != null && context.missingLocalNetworkPermission(address)) {
+      launcher.launch(Manifest.permission.ACCESS_LOCAL_NETWORK)
+    } else {
+      onFindServer()
+    }
+  }
+}
+
+private fun Context.missingLocalNetworkPermission(address: String): Boolean {
+  return Build.VERSION.SDK_INT >= 37 &&
+    needsLocalNetworkPermission(address) &&
+    checkSelfPermission(Manifest.permission.ACCESS_LOCAL_NETWORK) != PackageManager.PERMISSION_GRANTED
 }
 
 @Composable
@@ -252,6 +298,7 @@ private fun AddressError.message(): String = when (this) {
   AddressError.CertificateNotTrusted -> stringResource(StringsR.string.audiobookshelf_login_error_certificate)
   AddressError.NotSetUp -> stringResource(StringsR.string.audiobookshelf_login_error_not_set_up)
   is AddressError.TooOld -> stringResource(StringsR.string.audiobookshelf_login_error_too_old, version)
+  AddressError.LocalNetworkDenied -> stringResource(StringsR.string.audiobookshelf_login_error_local_network)
 }
 
 @Composable
