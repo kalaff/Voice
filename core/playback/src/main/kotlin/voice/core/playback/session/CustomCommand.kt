@@ -26,6 +26,9 @@ internal sealed interface CustomCommand {
   companion object {
 
     const val CUSTOM_COMMAND_ACTION = "voiceCommandAction"
+
+    /** Own action with empty extras, because the notification button can only carry what the session authorizes. */
+    const val CYCLE_SPEED_ACTION = "voiceCycleSpeed"
     internal const val CUSTOM_COMMAND_EXTRA = "voiceCommandExtra"
     internal fun parse(
       command: SessionCommand,

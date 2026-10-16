@@ -332,6 +332,7 @@
     <string name="playback.speed.decrease">Pomaleji</string>
     <string name="playback.speed.increase">Rychleji</string>
     <string name="playback.speed.title">Rychlost přehrávání</string>
+    <string name="playback.speed.use_for_all">Použít pro všechny knihy</string>
     <string name="playback.volume_boost.off">Vypnuto</string>
     <string name="review.prompt.action.feedback">Sdílet zpětnou vazbu</string>
     <string name="review.prompt.action.later">Teď ne</string>
@@ -387,6 +388,8 @@
     <string name="settings.playback.auto_rewind.off">Vypnuto</string>
     <string name="settings.playback.auto_rewind.summary">Při obnovení přehrávání se kousek vrátí, abyste neztratili nit</string>
     <string name="settings.playback.auto_rewind.title">Automaticky přetočit</string>
+    <string name="settings.playback.global_speed.summary">Jedna rychlost pro každou knihu. Vypněte ho, aby si každá kniha zachovala svou rychlost.</string>
+    <string name="settings.playback.global_speed.title">Globální rychlost přehrávání</string>
     <string name="settings.playback.lock_screen_slider.summary">Posouvejte se v kapitole ze zamykací obrazovky a oznámení. Vypněte ho, aby náhodný dotyk nepřesunul přehrávání jinam.</string>
     <string name="settings.playback.lock_screen_slider.title">Posuvník na zamykací obrazovce</string>
     <string name="settings.playback.play_together.summary">Pokračuje v přehrávání, i když jiná aplikace vydává zvuk. Hovory a budíky Voice také nepozastaví.</string>

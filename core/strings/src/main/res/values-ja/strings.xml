@@ -287,6 +287,7 @@
     <string name="playback.speed.decrease">遅く</string>
     <string name="playback.speed.increase">速く</string>
     <string name="playback.speed.title">再生速度</string>
+    <string name="playback.speed.use_for_all">すべての本に適用する</string>
     <string name="playback.volume_boost.off">オフ</string>
     <string name="review.prompt.action.feedback">フィードバックを送る</string>
     <string name="review.prompt.action.later">今はしない</string>
@@ -339,6 +340,8 @@
     <string name="settings.playback.auto_rewind.off">オフ</string>
     <string name="settings.playback.auto_rewind.summary">再開時に少し巻き戻すので、話の流れを見失いません</string>
     <string name="settings.playback.auto_rewind.title">自動巻き戻し</string>
+    <string name="settings.playback.global_speed.summary">すべての本を同じ速度で再生します。オフにすると、本ごとの速度が保たれます。</string>
+    <string name="settings.playback.global_speed.title">共通の再生速度</string>
     <string name="settings.playback.lock_screen_slider.summary">ロック画面や通知から、チャプター内を移動できます。オフにすると、うっかり触れても再生位置がずれません。</string>
     <string name="settings.playback.lock_screen_slider.title">ロック画面のシークバー</string>
     <string name="settings.playback.play_together.summary">他のアプリで音が鳴っていても再生を続けます。通話やアラームでも Voice は一時停止しません。</string>

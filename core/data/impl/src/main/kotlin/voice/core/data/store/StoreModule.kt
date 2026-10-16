@@ -270,6 +270,24 @@ public object StoreModule {
       fileName = "lastPlaybackSpeed",
     )
   }
+
+  @Provides
+  @SingleIn(AppScope::class)
+  @GlobalSpeedOverrideStore
+  private fun globalSpeedOverride(factory: VoiceDataStoreFactory): DataStore<Boolean> {
+    return factory.boolean("globalSpeedOverride", defaultValue = false)
+  }
+
+  @Provides
+  @SingleIn(AppScope::class)
+  @GlobalSpeedStore
+  private fun globalSpeed(factory: VoiceDataStoreFactory): DataStore<Float> {
+    return factory.create(
+      serializer = Float.serializer(),
+      defaultValue = 1F,
+      fileName = "globalSpeed",
+    )
+  }
 }
 
 private class LegacyDarkThemeMigration(

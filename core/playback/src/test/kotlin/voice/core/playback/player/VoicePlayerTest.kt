@@ -17,6 +17,8 @@ import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.just
 import io.mockk.mockk
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.advanceUntilIdle
@@ -40,6 +42,7 @@ import voice.core.playback.history.CommandSourceResolver
 import voice.core.playback.history.ListeningHistoryRecorder
 import voice.core.playback.history.PlaybackPosition
 import voice.core.playback.session.MediaItemProvider
+import voice.core.playback.session.NotificationSpeedButton
 import voice.core.playback.session.realChapterId
 import voice.core.playback.session.search.book
 import voice.core.playback.session.toMediaIdOrNull
@@ -77,6 +80,8 @@ class VoicePlayerTest {
   private val seekTimeStore = MemoryDataStore(2)
   private val autoRewindAmountStore = MemoryDataStore(2)
   private val lastPlaybackSpeedStore = MemoryDataStore(1F)
+  private val globalSpeedOverrideStore = MemoryDataStore(false)
+  private val globalSpeedStore = MemoryDataStore(1F)
 
   private val internalPlayer = TestExoPlayerBuilder(ApplicationProvider.getApplicationContext())
     .setMaxSeekToPreviousPositionMs(2_000)
@@ -126,7 +131,11 @@ class VoicePlayerTest {
     seekTimeStore = seekTimeStore,
     autoRewindAmountStore = autoRewindAmountStore,
     lastPlaybackSpeedStore = lastPlaybackSpeedStore,
-    scope = scope,
+    globalSpeedOverrideStore = globalSpeedOverrideStore,
+    globalSpeedStore = globalSpeedStore,
+    notificationSpeedButton = mockk(relaxUnitFun = true),
+    // its speed toggle collector never ends, so an own job keeps runTest from waiting for it
+    scope = CoroutineScope(scope.coroutineContext + SupervisorJob()),
     volumeGain = mockk(relaxed = true),
     sleepTimer = sleepTimer,
     analytics = mockk(relaxed = true),
@@ -396,6 +405,56 @@ class VoicePlayerTest {
     )
 
     assertEquals(expected = 1F, actual = lastPlaybackSpeedStore.data.first())
+  }
+
+  @Test
+  fun `with the global speed on, every book plays at the global speed but keeps its own`() = scope.runTest {
+    setMediaItems(
+      listOf(chapter(ChapterMark(startMs = 0, endMs = 20_000, name = null))),
+      playbackSpeed = 1.25F,
+      lastPlayedAt = Instant.ofEpochSecond(1),
+    )
+    globalSpeedStore.updateData { 1.5F }
+    globalSpeedOverrideStore.updateData { true }
+    runCurrent()
+
+    assertEquals(expected = 1.5F, actual = internalPlayer.playbackParameters.speed)
+    assertEquals(expected = 1.25F, actual = currentBook.content.playbackSpeed)
+  }
+
+  @Test
+  fun `with the global speed on, changing the speed writes the global one and keeps the book's`() = scope.runTest {
+    globalSpeedOverrideStore.updateData { true }
+    setMediaItems(
+      listOf(chapter(ChapterMark(startMs = 0, endMs = 20_000, name = null))),
+      playbackSpeed = 1.25F,
+      lastPlayedAt = Instant.ofEpochSecond(1),
+    )
+
+    player.setPlaybackSpeed(1.75F)
+    runCurrent()
+
+    assertEquals(expected = 1.75F, actual = globalSpeedStore.data.first())
+    assertEquals(expected = 1.25F, actual = currentBook.content.playbackSpeed)
+    assertEquals(expected = 1F, actual = lastPlaybackSpeedStore.data.first())
+  }
+
+  @Test
+  fun `turning the global speed off returns to the book's own speed`() = scope.runTest {
+    setMediaItems(
+      listOf(chapter(ChapterMark(startMs = 0, endMs = 20_000, name = null))),
+      playbackSpeed = 1.25F,
+      lastPlayedAt = Instant.ofEpochSecond(1),
+    )
+    globalSpeedStore.updateData { 1.5F }
+    globalSpeedOverrideStore.updateData { true }
+    runCurrent()
+    assertEquals(expected = 1.5F, actual = internalPlayer.playbackParameters.speed)
+
+    globalSpeedOverrideStore.updateData { false }
+    runCurrent()
+
+    assertEquals(expected = 1.25F, actual = internalPlayer.playbackParameters.speed)
   }
 
   @Test

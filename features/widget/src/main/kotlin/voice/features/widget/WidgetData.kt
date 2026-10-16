@@ -26,11 +26,13 @@ import voice.core.data.ThemeColorScheme
 import voice.core.data.repo.BookContentRepo
 import voice.core.data.repo.BookRepository
 import voice.core.data.store.CurrentBookStore
+import voice.core.data.store.GlobalSpeedOverrideStore
+import voice.core.data.store.GlobalSpeedStore
 import voice.core.data.store.LastPlaybackSpeedStore
 import voice.core.data.store.ThemeColorSchemeStore
 import voice.core.playback.CurrentBookResolver
 import voice.core.playback.playstate.PlayStateManager
-import voice.core.playback.withDefaultSpeed
+import voice.core.playback.withEffectiveSpeed
 import voice.core.sleeptimer.SleepTimer
 import voice.core.ui.CoverSeedColors
 import java.time.Instant
@@ -50,6 +52,10 @@ class WidgetData(
   private val currentBookStore: DataStore<BookId?>,
   @LastPlaybackSpeedStore
   private val lastPlaybackSpeedStore: DataStore<Float>,
+  @GlobalSpeedOverrideStore
+  private val globalSpeedOverrideStore: DataStore<Boolean>,
+  @GlobalSpeedStore
+  private val globalSpeedStore: DataStore<Float>,
   private val playStateManager: PlayStateManager,
   private val sleepTimer: SleepTimer,
   @ThemeColorSchemeStore
@@ -77,13 +83,14 @@ class WidgetData(
           playing,
           refreshWhilePlaying(),
           lastPlaybackSpeedStore.data,
-        ) { book, playing, _, defaultSpeed ->
+          combine(globalSpeedOverrideStore.data, globalSpeedStore.data) { enabled, speed -> enabled to speed },
+        ) { book, playing, _, defaultSpeed, globalSpeed ->
           if (book != null && playing) {
             // with live playback persistence, the database doesn't follow the position while playing
             currentBookResolver.value.book(id) ?: book
           } else {
             book
-          }?.withDefaultSpeed { defaultSpeed }
+          }?.withEffectiveSpeed(globalSpeed.first, globalSpeed.second) { defaultSpeed }
         }
       }
     }

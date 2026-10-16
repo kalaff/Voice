@@ -302,6 +302,7 @@
     <string name="playback.speed.decrease">Daha yavaş</string>
     <string name="playback.speed.increase">Daha hızlı</string>
     <string name="playback.speed.title">Oynatma hızı</string>
+    <string name="playback.speed.use_for_all">Tüm kitaplar için kullan</string>
     <string name="playback.volume_boost.off">Kapalı</string>
     <string name="review.prompt.action.feedback">Geri bildirim paylaş</string>
     <string name="review.prompt.action.later">Şimdi değil</string>
@@ -355,6 +356,8 @@
     <string name="settings.playback.auto_rewind.off">Kapalı</string>
     <string name="settings.playback.auto_rewind.summary">Devam ettiğinizde biraz geri sarar, böylece konuyu kaçırmazsınız</string>
     <string name="settings.playback.auto_rewind.title">Otomatik geri sarma</string>
+    <string name="settings.playback.global_speed.summary">Her kitap için tek bir hız. Her kitabın kendi hızında kalması için kapatın.</string>
+    <string name="settings.playback.global_speed.title">Genel oynatma hızı</string>
     <string name="settings.playback.lock_screen_slider.summary">Kilit ekranından ve bildirimden bölüm içinde ileri geri gidebilirsiniz. Yanlışlıkla bir dokunuşla yerinizi kaybetmemek için kapatın.</string>
     <string name="settings.playback.lock_screen_slider.title">Kilit ekranı kaydırıcısı</string>
     <string name="settings.playback.play_together.summary">Başka bir uygulama ses çıkardığında oynatmaya devam eder. Aramalar ve alarmlar da Voice\'u duraklatmaz.</string>

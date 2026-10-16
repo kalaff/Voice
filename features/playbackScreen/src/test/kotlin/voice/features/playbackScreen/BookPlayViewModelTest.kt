@@ -132,6 +132,8 @@ class BookPlayViewModelTest {
     clock = clock,
     serverLibrary = serverLibrary,
     lastPlaybackSpeedStore = MemoryDataStore(1F),
+    globalSpeedOverrideStore = MemoryDataStore(false),
+    globalSpeedStore = MemoryDataStore(1F),
   )
 
   @Test
@@ -514,6 +516,8 @@ class BookPlayViewModelTest {
       clock = clock,
       serverLibrary = serverLibrary,
       lastPlaybackSpeedStore = MemoryDataStore(lastPlaybackSpeed),
+      globalSpeedOverrideStore = MemoryDataStore(false),
+      globalSpeedStore = MemoryDataStore(1F),
     )
   }
 }

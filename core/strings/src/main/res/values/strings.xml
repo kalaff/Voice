@@ -509,6 +509,8 @@
     <string name="playback.speed.increase">Faster</string>
     <!-- Title and content description for playback-speed controls. -->
     <string name="playback.speed.title">Playback speed</string>
+    <!-- Switch in the speed sheet that applies the set speed to every book. -->
+    <string name="playback.speed.use_for_all">Use for all books</string>
     <!-- Button that turns volume boost off. -->
     <string name="playback.volume_boost.off">Off</string>
     <!-- Button in the rating prompt that opens the ways to share feedback. -->
@@ -613,6 +615,10 @@
     <string name="settings.playback.auto_rewind.summary">Jumps back a little when you resume, so you don\'t lose the thread</string>
     <!-- Title for the setting that rewinds automatically when playback resumes. -->
     <string name="settings.playback.auto_rewind.title">Auto rewind</string>
+    <!-- Summary of the switch that plays every book at one global speed instead of each book's own speed. -->
+    <string name="settings.playback.global_speed.summary">One speed for every book. Turn it off to keep each book at its own speed.</string>
+    <!-- Title of the switch that plays every book at one global speed instead of each book's own speed. -->
+    <string name="settings.playback.global_speed.title">Global playback speed</string>
     <!-- Explains the lock screen slider setting. When it's off, the progress slider in the media notification and on the lock screen only shows progress, and touching it does nothing. -->
     <string name="settings.playback.lock_screen_slider.summary">Drag through the chapter from the lock screen and notification. Turn it off so a stray touch can\'t lose your place.</string>
     <!-- Title for the setting that lets the listener drag the progress slider in the media notification and on the lock screen. -->

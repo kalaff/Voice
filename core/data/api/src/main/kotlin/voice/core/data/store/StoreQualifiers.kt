@@ -71,3 +71,9 @@ public annotation class LockScreenSliderStore
 
 @Qualifier
 public annotation class PlayTogetherStore
+
+@Qualifier
+public annotation class GlobalSpeedOverrideStore
+
+@Qualifier
+public annotation class GlobalSpeedStore

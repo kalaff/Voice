@@ -302,6 +302,7 @@
     <string name="playback.speed.decrease">Långsammare</string>
     <string name="playback.speed.increase">Snabbare</string>
     <string name="playback.speed.title">Uppspelningshastighet</string>
+    <string name="playback.speed.use_for_all">Använd för alla böcker</string>
     <string name="playback.volume_boost.off">Av</string>
     <string name="review.prompt.action.feedback">Ge feedback</string>
     <string name="review.prompt.action.later">Inte nu</string>
@@ -355,6 +356,8 @@
     <string name="settings.playback.auto_rewind.off">Av</string>
     <string name="settings.playback.auto_rewind.summary">Hoppar tillbaka en bit när du fortsätter, så att du inte tappar tråden</string>
     <string name="settings.playback.auto_rewind.title">Automatisk bakåtspolning</string>
+    <string name="settings.playback.global_speed.summary">En hastighet för alla böcker. Stäng av den så behåller varje bok sin egen hastighet.</string>
+    <string name="settings.playback.global_speed.title">Global uppspelningshastighet</string>
     <string name="settings.playback.lock_screen_slider.summary">Spola genom kapitlet från låsskärmen och aviseringen. Stäng av det, så att en oavsiktlig beröring inte får dig att tappa bort var du var.</string>
     <string name="settings.playback.lock_screen_slider.title">Reglage på låsskärmen</string>
     <string name="settings.playback.play_together.summary">Spelar vidare när en annan app ger ljud. Samtal och alarm pausar inte Voice heller.</string>

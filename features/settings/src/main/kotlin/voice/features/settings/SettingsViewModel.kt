@@ -26,6 +26,7 @@ import voice.core.data.sleeptimer.SleepTimerPreference
 import voice.core.data.store.AnalyticsConsentStore
 import voice.core.data.store.AutoRewindAmountStore
 import voice.core.data.store.DeveloperMenuUnlockedStore
+import voice.core.data.store.GlobalSpeedOverrideStore
 import voice.core.data.store.GridModeStore
 import voice.core.data.store.LockScreenSliderStore
 import voice.core.data.store.PlayTogetherStore
@@ -64,6 +65,8 @@ class SettingsViewModel(
   private val lockScreenSliderStore: DataStore<Boolean>,
   @PlayTogetherStore
   private val playTogetherStore: DataStore<Boolean>,
+  @GlobalSpeedOverrideStore
+  private val globalSpeedOverrideStore: DataStore<Boolean>,
   private val navigator: Navigator,
   private val appInfoProvider: AppInfoProvider,
   @GridModeStore
@@ -107,6 +110,7 @@ class SettingsViewModel(
     val seekTime = remember { seekTimeStore.data }.collectAsState(initial = null).value
     val lockScreenSlider = remember { lockScreenSliderStore.data }.collectAsState(initial = null).value
     val playTogether = remember { playTogetherStore.data }.collectAsState(initial = null).value
+    val globalSpeed = remember { globalSpeedOverrideStore.data }.collectAsState(initial = null).value
     val gridMode = remember { gridModeStore.data }.collectAsState(initial = null).value
     val autoSleepTimer = remember { sleepTimerPreferenceStore.data }.collectAsState(initial = null).value
     val analyticsEnabled = remember { analyticsConsentStore.data }.collectAsState(initial = null).value
@@ -130,6 +134,7 @@ class SettingsViewModel(
       seekTime == null ||
       lockScreenSlider == null ||
       playTogether == null ||
+      globalSpeed == null ||
       gridMode == null ||
       autoSleepTimer == null ||
       analyticsEnabled == null ||
@@ -150,6 +155,7 @@ class SettingsViewModel(
       autoRewindInSeconds = autoRewindAmount,
       lockScreenSlider = lockScreenSlider,
       playTogether = playTogether,
+      globalSpeed = globalSpeed,
       appVersion = appInfoProvider.versionName,
       useGrid = when (gridMode) {
         GridMode.LIST -> false
@@ -248,6 +254,12 @@ class SettingsViewModel(
   override fun togglePlayTogether() {
     mainScope.launch {
       playTogetherStore.updateData { !it }
+    }
+  }
+
+  override fun toggleGlobalSpeed() {
+    mainScope.launch {
+      globalSpeedOverrideStore.updateData { !it }
     }
   }
 

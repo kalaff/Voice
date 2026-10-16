@@ -287,6 +287,7 @@
     <string name="playback.speed.decrease">Lebih lambat</string>
     <string name="playback.speed.increase">Lebih cepat</string>
     <string name="playback.speed.title">Kecepatan pemutaran</string>
+    <string name="playback.speed.use_for_all">Gunakan untuk semua buku</string>
     <string name="playback.volume_boost.off">Mati</string>
     <string name="review.prompt.action.feedback">Bagikan masukan</string>
     <string name="review.prompt.action.later">Nanti saja</string>
@@ -339,6 +340,8 @@
     <string name="settings.playback.auto_rewind.off">Mati</string>
     <string name="settings.playback.auto_rewind.summary">Mundur sedikit saat Anda melanjutkan, agar Anda tidak kehilangan alur</string>
     <string name="settings.playback.auto_rewind.title">Mundur otomatis</string>
+    <string name="settings.playback.global_speed.summary">Satu kecepatan untuk semua buku. Matikan agar setiap buku tetap pada kecepatannya sendiri.</string>
+    <string name="settings.playback.global_speed.title">Kecepatan pemutaran global</string>
     <string name="settings.playback.lock_screen_slider.summary">Geser maju-mundur dalam bab dari layar kunci dan notifikasi. Matikan agar sentuhan tak sengaja tidak membuat Anda kehilangan posisi terakhir.</string>
     <string name="settings.playback.lock_screen_slider.title">Penggeser di layar kunci</string>
     <string name="settings.playback.play_together.summary">Tetap diputar saat aplikasi lain mengeluarkan suara. Panggilan dan alarm juga tidak akan menjeda Voice.</string>

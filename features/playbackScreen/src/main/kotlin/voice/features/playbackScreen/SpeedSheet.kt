@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material3.ButtonGroupDefaults
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FilledTonalIconButton
@@ -19,6 +20,7 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.SheetValue.Expanded
 import androidx.compose.material3.SheetValue.Hidden
 import androidx.compose.material3.Slider
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.ToggleButton
 import androidx.compose.material3.rememberBottomSheetState
@@ -39,17 +41,18 @@ import voice.features.playbackScreen.view.RollingText
 import java.text.DecimalFormat
 import kotlin.math.abs
 import kotlin.math.roundToInt
+import voice.core.playback.PLAYBACK_SPEED_PRESETS as SPEED_PRESETS
 import voice.core.strings.R as StringsR
 
 private const val MIN_SPEED = 0.5F
 private const val MAX_SPEED = 3.5F
 private const val SPEED_STEP = 0.05F
-private val SPEED_PRESETS = listOf(0.75F, 1F, 1.25F, 1.5F, 2F)
 
 @Composable
 internal fun SpeedSheet(
   dialogState: BookPlayDialogViewState.SpeedDialog,
   onSpeedChange: (Float) -> Unit,
+  onOverrideToggle: () -> Unit,
   onDismiss: () -> Unit,
 ) {
   val speedFormat = remember { DecimalFormat("0.0#") }
@@ -131,6 +134,25 @@ internal fun SpeedSheet(
             Text(speedFormat.format(preset), maxLines = 1)
           }
         }
+      }
+      Spacer(Modifier.height(20.dp))
+      Row(
+        modifier = Modifier
+          .fillMaxWidth()
+          .toggleable(
+            value = dialogState.overrideEnabled,
+            role = Role.Switch,
+            onValueChange = { onOverrideToggle() },
+          )
+          .padding(vertical = 8.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+      ) {
+        Text(
+          text = stringResource(StringsR.string.playback_speed_use_for_all),
+          style = MaterialTheme.typography.bodyLarge,
+        )
+        Switch(checked = dialogState.overrideEnabled, onCheckedChange = null)
       }
     }
   }

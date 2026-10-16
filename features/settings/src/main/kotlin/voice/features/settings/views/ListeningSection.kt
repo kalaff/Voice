@@ -101,6 +101,8 @@ internal fun ListeningSection(
   onLockScreenSliderToggle: () -> Unit,
   playTogether: Boolean,
   onPlayTogetherToggle: () -> Unit,
+  globalSpeed: Boolean,
+  onGlobalSpeedToggle: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
   SettingsIsland(
@@ -158,6 +160,21 @@ internal fun ListeningSection(
         )
       },
       summary = { Text(stringResource(StringsR.string.settings_playback_play_together_summary)) },
+    )
+    Spacer(Modifier.height(20.dp))
+    IslandSwitchRow(
+      title = stringResource(StringsR.string.settings_playback_global_speed_title),
+      checked = globalSpeed,
+      onCheckedChange = { onGlobalSpeedToggle() },
+      leading = {
+        ShapedIcon(
+          icon = VoiceIcons.Speed,
+          shape = MaterialShapes.Sunny,
+          containerColor = MaterialTheme.colorScheme.secondary,
+          contentColor = MaterialTheme.colorScheme.onSecondary,
+        )
+      },
+      summary = { Text(stringResource(StringsR.string.settings_playback_global_speed_summary)) },
     )
   }
 }
