@@ -69,6 +69,16 @@
         <item quantity="one">%1$s · %2$d book</item>
         <item quantity="other">%1$s · %2$d books</item>
     </plurals>
+    <!-- Plural after an import when some books of the backup are not in this library. %1$d is the number of those books, %2$d the number of restored bookmarks. -->
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d book and %2$d bookmarks restored</item>
+        <item quantity="other">%1$d books and %2$d bookmarks restored</item>
+    </plurals>
+    <!-- Plural after an import for the books of the backup that are not in this library. %1$d is their count. -->
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d book was not in this library</item>
+        <item quantity="other">%1$d books were not in this library</item>
+    </plurals>
     <!-- Label of the password field when signing in to the server. -->
     <string name="audiobookshelf.login.password">Password</string>
     <!-- Content description of the button that hides the typed password again. -->
@@ -113,6 +123,16 @@
     <string name="audiobookshelf.status.syncing">Syncing…</string>
     <!-- Name of the self-hosted audiobook server. Product name, not translated. -->
     <string name="audiobookshelf.title" translatable="false">Audiobookshelf</string>
+    <!-- Button on the backup screen that writes the progress and bookmarks to a picked file. -->
+    <string name="backup.export">Export to file</string>
+    <!-- Confirmation on the backup screen after the file was written. -->
+    <string name="backup.export_done">Saved</string>
+    <!-- Button on the backup screen that restores the progress and bookmarks from a picked file. -->
+    <string name="backup.import">Import from file</string>
+    <!-- Error on the backup screen when the picked file is not a Voice backup or could not be read. -->
+    <string name="backup.import_failed">That file is not a Voice backup.</string>
+    <!-- Subtitle of the backup screen: what goes into the file and what does not. -->
+    <string name="backup.subtitle">Keeps your place and bookmarks in a file you control. The audio files themselves are not part of it.</string>
     <!-- Bottom-sheet action for moving a book to the completed category. -->
     <string name="book.category.action.mark_completed">Mark as Completed</string>
     <!-- Bottom-sheet action for moving a book to the current category. -->
@@ -603,6 +623,10 @@
     <string name="settings.auto_sleep_timer.title">Automatic Sleep Timer</string>
     <!-- Summary of the Audiobookshelf row in the library settings when no server is connected. -->
     <string name="settings.library.audiobookshelf.summary">Stream the books on your own server</string>
+    <!-- Summary of the backup row in the library settings. -->
+    <string name="settings.library.backup.summary">Save your progress and bookmarks to a file</string>
+    <!-- Title of the backup row and screen in the library settings. -->
+    <string name="settings.library.backup.title">Backup</string>
     <!-- Summary text for the audiobook folders settings row. Also the subtitle of the audiobook folders screen. -->
     <string name="settings.library.folders.summary">Manage folders scanned for audiobooks</string>
     <!-- Label of the preview tile that shows the library as a grid of covers. -->

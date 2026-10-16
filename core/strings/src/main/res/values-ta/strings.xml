@@ -38,6 +38,14 @@
         <item quantity="one">%1$s · %2$d புத்தகம்</item>
         <item quantity="other">%1$s · %2$d புத்தகங்கள்</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d புத்தகம் மற்றும் %2$d புக்மார்க்குகள் மீட்டமைக்கப்பட்டன</item>
+        <item quantity="other">%1$d புத்தகங்கள் மற்றும் %2$d புக்மார்க்குகள் மீட்டமைக்கப்பட்டன</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d புத்தகம் இந்த நூலகத்தில் இல்லை</item>
+        <item quantity="other">%1$d புத்தகங்கள் இந்த நூலகத்தில் இல்லை</item>
+    </plurals>
     <string name="audiobookshelf.login.password">கடவுச்சொல்</string>
     <string name="audiobookshelf.login.password.hide">கடவுச்சொல்லை மறை</string>
     <string name="audiobookshelf.login.password.show">கடவுச்சொல்லைக் காட்டு</string>
@@ -59,6 +67,11 @@
     <string name="audiobookshelf.status.needs_login">நீங்கள் மீண்டும் உள்நுழைய வேண்டும் என சர்வர் கேட்கிறது</string>
     <string name="audiobookshelf.status.offline">இப்போது சர்வரை அணுக முடியவில்லை. பதிவிறக்கிய புத்தகங்கள் தொடர்ந்து இயங்கும்.</string>
     <string name="audiobookshelf.status.syncing">ஒத்திசைக்கிறது…</string>
+    <string name="backup.export">கோப்புக்கு ஏற்றுமதி செய்</string>
+    <string name="backup.export_done">சேமிக்கப்பட்டது</string>
+    <string name="backup.import">கோப்பிலிருந்து இறக்குமதி செய்</string>
+    <string name="backup.import_failed">அந்தக் கோப்பு ஒரு Voice காப்புப் பிரதி அல்ல.</string>
+    <string name="backup.subtitle">உங்கள் இடத்தையும் புக்மார்க்குகளையும் நீங்கள் கட்டுப்படுத்தும் கோப்பில் வைத்திருக்கும். ஆடியோ கோப்புகள் அதில் இடம்பெறவில்லை.</string>
     <string name="book.category.action.mark_completed">முடிக்கப்பட்டபடி குறி</string>
     <string name="book.category.action.mark_current">மின்னோட்டமாக குறிக்கவும்</string>
     <string name="book.category.action.mark_not_started">மார்க் இன்னும் தொடங்கவில்லை</string>
@@ -350,6 +363,8 @@
     <string name="settings.auto_sleep_timer.summary">பிளேபேக் %1$s மற்றும் %2$s க்கு இடையில் தொடங்கும்போது தானாக ஒரு தூக்க நேரத்தைத் தொடங்குங்கள்</string>
     <string name="settings.auto_sleep_timer.title">தானியங்கி தூக்க நேரங்காட்டி</string>
     <string name="settings.library.audiobookshelf.summary">உங்கள் சொந்த சர்வரில் உள்ள புத்தகங்களை ஸ்ட்ரீம் செய்யுங்கள்</string>
+    <string name="settings.library.backup.summary">உங்கள் முன்னேற்றத்தையும் புக்மார்க்குகளையும் கோப்பில் சேமிக்கவும்</string>
+    <string name="settings.library.backup.title">காப்புப் பிரதி</string>
     <string name="settings.library.folders.summary">ஒலிபுத்தகங்களுக்காக வருடல் செய்யப்பட்ட கோப்புறைகளை நிர்வகி</string>
     <string name="settings.library.layout.grid">கட்டம்</string>
     <string name="settings.library.layout.list">பட்டியல்</string>

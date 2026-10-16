@@ -41,6 +41,16 @@
         <item quantity="two">%1$s · %2$d ספרים</item>
         <item quantity="other">%1$s · %2$d ספרים</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d ספר ו-%2$d סימניות שוחזרו</item>
+        <item quantity="two">%1$d ספרים ו-%2$d סימניות שוחזרו</item>
+        <item quantity="other">%1$d ספרים ו-%2$d סימניות שוחזרו</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d ספר לא היה בספרייה הזאת</item>
+        <item quantity="two">%1$d ספרים לא היו בספרייה הזאת</item>
+        <item quantity="other">%1$d ספרים לא היו בספרייה הזאת</item>
+    </plurals>
     <string name="audiobookshelf.login.password">סיסמה</string>
     <string name="audiobookshelf.login.password.hide">הסתרת הסיסמה</string>
     <string name="audiobookshelf.login.password.show">הצגת הסיסמה</string>
@@ -62,6 +72,11 @@
     <string name="audiobookshelf.status.needs_login">השרת מבקש שתיכנסו שוב</string>
     <string name="audiobookshelf.status.offline">אין כרגע חיבור לשרת. ספרים שהורדו ממשיכים להתנגן.</string>
     <string name="audiobookshelf.status.syncing">סנכרון…</string>
+    <string name="backup.export">ייצוא לקובץ</string>
+    <string name="backup.export_done">נשמר</string>
+    <string name="backup.import">ייבוא מקובץ</string>
+    <string name="backup.import_failed">הקובץ הזה אינו גיבוי של Voice.</string>
+    <string name="backup.subtitle">שומר את המקום שלכם ואת הסימניות בקובץ שבשליטתכם. קבצי השמע עצמם אינם חלק ממנו.</string>
     <string name="book.category.action.mark_completed">סימון כהושלם</string>
     <string name="book.category.action.mark_current">סימון כנוכחי</string>
     <string name="book.category.action.mark_not_started">סימון כ\"לא שמעתי עדיין\"</string>
@@ -366,6 +381,8 @@
     <string name="settings.auto_sleep_timer.summary">הפעלה אוטומטית של טיימר-השינה כשההשמעה מתחילה בין %1$s ל-%2$s</string>
     <string name="settings.auto_sleep_timer.title">טיימר-שינה אוטומטי</string>
     <string name="settings.library.audiobookshelf.summary">הזרמת הספרים מהשרת שלכם</string>
+    <string name="settings.library.backup.summary">שמירת ההתקדמות והסימניות שלכם בקובץ</string>
+    <string name="settings.library.backup.title">גיבוי</string>
     <string name="settings.library.folders.summary">ניהול תיקיות שנסרקות עבור ספרי שמע</string>
     <string name="settings.library.layout.grid">רשת</string>
     <string name="settings.library.layout.list">רשימה</string>

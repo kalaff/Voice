@@ -35,6 +35,12 @@
     <plurals name="audiobookshelf.login.library_chip">
         <item quantity="other">%1$s · %2$d buku</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="other">%1$d buku dan %2$d markah dipulihkan</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="other">%1$d buku tidak ada di pustaka ini</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Kata sandi</string>
     <string name="audiobookshelf.login.password.hide">Sembunyikan kata sandi</string>
     <string name="audiobookshelf.login.password.show">Tampilkan kata sandi</string>
@@ -56,6 +62,11 @@
     <string name="audiobookshelf.status.needs_login">Server meminta Anda masuk lagi</string>
     <string name="audiobookshelf.status.offline">Server tidak dapat dijangkau saat ini. Buku yang sudah diunduh tetap bisa diputar.</string>
     <string name="audiobookshelf.status.syncing">Menyinkronkan…</string>
+    <string name="backup.export">Ekspor ke file</string>
+    <string name="backup.export_done">Tersimpan</string>
+    <string name="backup.import">Impor dari file</string>
+    <string name="backup.import_failed">File itu bukan cadangan Voice.</string>
+    <string name="backup.subtitle">Menyimpan posisi dan markah Anda di file yang Anda kendalikan. File audio itu sendiri tidak termasuk di dalamnya.</string>
     <string name="book.category.action.mark_completed">Tandai Selesai</string>
     <string name="book.category.action.mark_current">Tandai Sedang Dibaca</string>
     <string name="book.category.action.mark_not_started">Tandai Belum Dibaca</string>
@@ -334,6 +345,8 @@
     <string name="settings.auto_sleep_timer.summary">Mulai pengatur waktu tidur secara otomatis saat pemutaran dimulai antara %1$s dan %2$s</string>
     <string name="settings.auto_sleep_timer.title">Pengatur Waktu Tidur Otomatis</string>
     <string name="settings.library.audiobookshelf.summary">Streaming buku dari server Anda sendiri</string>
+    <string name="settings.library.backup.summary">Simpan progres dan markah Anda ke file</string>
+    <string name="settings.library.backup.title">Cadangan</string>
     <string name="settings.library.folders.summary">Kelola folder yang dipindai untuk buku audio</string>
     <string name="settings.library.layout.grid">Kisi</string>
     <string name="settings.library.layout.list">Daftar</string>

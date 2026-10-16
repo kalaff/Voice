@@ -44,6 +44,18 @@
         <item quantity="many">%1$s · %2$d книг</item>
         <item quantity="other">%1$s · %2$d книг</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d книга и %2$d закладок восстановлены</item>
+        <item quantity="few">%1$d книги и %2$d закладок восстановлены</item>
+        <item quantity="many">%1$d книг и %2$d закладок восстановлены</item>
+        <item quantity="other">%1$d книг и %2$d закладок восстановлены</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d книга не найдена в этой библиотеке</item>
+        <item quantity="few">%1$d книги не найдены в этой библиотеке</item>
+        <item quantity="many">%1$d книг не найдено в этой библиотеке</item>
+        <item quantity="other">%1$d книг не найдено в этой библиотеке</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Пароль</string>
     <string name="audiobookshelf.login.password.hide">Скрыть пароль</string>
     <string name="audiobookshelf.login.password.show">Показать пароль</string>
@@ -65,6 +77,11 @@
     <string name="audiobookshelf.status.needs_login">Сервер просит войти снова</string>
     <string name="audiobookshelf.status.offline">Сервер сейчас недоступен. Скачанные книги по-прежнему можно слушать.</string>
     <string name="audiobookshelf.status.syncing">Синхронизация…</string>
+    <string name="backup.export">Экспортировать в файл</string>
+    <string name="backup.export_done">Сохранено</string>
+    <string name="backup.import">Импортировать из файла</string>
+    <string name="backup.import_failed">Это не резервная копия Voice.</string>
+    <string name="backup.subtitle">Сохраняет ваш прогресс и закладки в файле, который вы контролируете. Сами аудиофайлы в него не входят.</string>
     <string name="book.category.action.mark_completed">Пометить как прослушанную</string>
     <string name="book.category.action.mark_current">Пометить как открытую</string>
     <string name="book.category.action.mark_not_started">Пометить как непрослушанную</string>
@@ -382,6 +399,8 @@
     <string name="settings.auto_sleep_timer.summary">Запускать таймер сна автоматически когда воспроизведение начинается между %1$s и %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматический таймер сна</string>
     <string name="settings.library.audiobookshelf.summary">Слушайте книги прямо со своего сервера</string>
+    <string name="settings.library.backup.summary">Сохраните прогресс и закладки в файл</string>
+    <string name="settings.library.backup.title">Резервная копия</string>
     <string name="settings.library.folders.summary">Управление папками, отсканированными на наличие аудиокниг</string>
     <string name="settings.library.layout.grid">Сетка</string>
     <string name="settings.library.layout.list">Список</string>

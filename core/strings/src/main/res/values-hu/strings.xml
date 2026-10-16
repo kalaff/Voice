@@ -38,6 +38,14 @@
         <item quantity="one">%1$s · %2$d könyv</item>
         <item quantity="other">%1$s · %2$d könyv</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d könyv és %2$d könyvjelző visszaállítva</item>
+        <item quantity="other">%1$d könyv és %2$d könyvjelző visszaállítva</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d könyv nem volt ebben a könyvtárban</item>
+        <item quantity="other">%1$d könyv nem volt ebben a könyvtárban</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Jelszó</string>
     <string name="audiobookshelf.login.password.hide">Jelszó elrejtése</string>
     <string name="audiobookshelf.login.password.show">Jelszó megjelenítése</string>
@@ -59,6 +67,11 @@
     <string name="audiobookshelf.status.needs_login">A szerver újbóli bejelentkezést kér</string>
     <string name="audiobookshelf.status.offline">A szerver most nem érhető el. A letöltött könyvek továbbra is lejátszhatók.</string>
     <string name="audiobookshelf.status.syncing">Szinkronizálás…</string>
+    <string name="backup.export">Exportálás fájlba</string>
+    <string name="backup.export_done">Mentve</string>
+    <string name="backup.import">Importálás fájlból</string>
+    <string name="backup.import_failed">Ez a fájl nem Voice-biztonsági mentés.</string>
+    <string name="backup.subtitle">Egy Ön által kezelt fájlban őrzi, ahol abbahagyta, és a könyvjelzőit. A hangfájlok maguk nem részei a mentésnek.</string>
     <string name="book.category.action.mark_completed">Jelölés meghallgatottnak</string>
     <string name="book.category.action.mark_current">Megjelölés aktuálisként</string>
     <string name="book.category.action.mark_not_started">Megjelölés még el nem kezdettként</string>
@@ -350,6 +363,8 @@
     <string name="settings.auto_sleep_timer.summary">Automatikusan elindítja az alvásidőzítőt, ha a lejátszás %1$s és %2$s között kezdődik</string>
     <string name="settings.auto_sleep_timer.title">Automatikus alvásidőzítő</string>
     <string name="settings.library.audiobookshelf.summary">Könyvek streamelése a saját szerveréről</string>
+    <string name="settings.library.backup.summary">Az előrehaladás és a könyvjelzők mentése fájlba</string>
+    <string name="settings.library.backup.title">Biztonsági mentés</string>
     <string name="settings.library.folders.summary">A hangoskönyvek keresésére használt mappák kezelése</string>
     <string name="settings.library.layout.grid">Rács</string>
     <string name="settings.library.layout.list">Lista</string>

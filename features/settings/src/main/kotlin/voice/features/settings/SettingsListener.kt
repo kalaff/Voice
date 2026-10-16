@@ -16,6 +16,7 @@ interface SettingsListener {
   fun toggleLockScreenSlider()
   fun togglePlayTogether()
   fun toggleGlobalSpeed()
+  fun openBackup()
   fun getSupport()
   fun suggestIdea()
   fun openBugReport()
@@ -44,6 +45,7 @@ interface SettingsListener {
       override fun toggleLockScreenSlider() {}
       override fun togglePlayTogether() {}
       override fun toggleGlobalSpeed() {}
+      override fun openBackup() {}
       override fun getSupport() {}
       override fun suggestIdea() {}
       override fun openBugReport() {}

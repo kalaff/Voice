@@ -38,6 +38,14 @@
         <item quantity="one">%1$s · %2$d bok</item>
         <item quantity="other">%1$s · %2$d bøker</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d bok og %2$d bokmerker ble gjenopprettet</item>
+        <item quantity="other">%1$d bøker og %2$d bokmerker ble gjenopprettet</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d bok var ikke i dette biblioteket</item>
+        <item quantity="other">%1$d bøker var ikke i dette biblioteket</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Passord</string>
     <string name="audiobookshelf.login.password.hide">Skjul passord</string>
     <string name="audiobookshelf.login.password.show">Vis passord</string>
@@ -59,6 +67,11 @@
     <string name="audiobookshelf.status.needs_login">Serveren vil at du logger på igjen</string>
     <string name="audiobookshelf.status.offline">Får ikke kontakt med serveren akkurat nå. Nedlastede bøker kan fortsatt spilles av.</string>
     <string name="audiobookshelf.status.syncing">Synkroniserer…</string>
+    <string name="backup.export">Eksporter til fil</string>
+    <string name="backup.export_done">Lagret</string>
+    <string name="backup.import">Importer fra fil</string>
+    <string name="backup.import_failed">Den filen er ikke en sikkerhetskopi fra Voice.</string>
+    <string name="backup.subtitle">Beholder lytteposisjonen og bokmerkene dine i en fil du styrer selv. Lydfilene selv er ikke en del av den.</string>
     <string name="book.category.action.mark_completed">Marker som fullført</string>
     <string name="book.category.action.mark_current">Marker som pågående</string>
     <string name="book.category.action.mark_not_started">Marker som ikke startet enda</string>
@@ -350,6 +363,8 @@
     <string name="settings.auto_sleep_timer.summary">Start en søvn-timer automatisk når avspillingen begynner mellom %1$s og %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk søvn-timer</string>
     <string name="settings.library.audiobookshelf.summary">Strøm bøkene fra din egen server</string>
+    <string name="settings.library.backup.summary">Lagre fremdriften og bokmerkene dine i en fil</string>
+    <string name="settings.library.backup.title">Sikkerhetskopi</string>
     <string name="settings.library.folders.summary">Håndter mapper som er skannet for lydbøker</string>
     <string name="settings.library.layout.grid">Rutenett</string>
     <string name="settings.library.layout.list">Liste</string>

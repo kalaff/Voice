@@ -263,6 +263,10 @@ class SettingsViewModel(
     }
   }
 
+  override fun openBackup() {
+    navigator.goTo(Destination.Backup)
+  }
+
   override fun getSupport() {
     navigator.goTo(Destination.Website(FeedbackLinks.QUESTIONS))
   }

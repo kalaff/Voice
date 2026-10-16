@@ -38,6 +38,14 @@
         <item quantity="one">%1$s · %2$d boek</item>
         <item quantity="other">%1$s · %2$d boeken</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d boek en %2$d bladwijzers hersteld</item>
+        <item quantity="other">%1$d boeken en %2$d bladwijzers hersteld</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d boek stond niet in deze bibliotheek</item>
+        <item quantity="other">%1$d boeken stonden niet in deze bibliotheek</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Wachtwoord</string>
     <string name="audiobookshelf.login.password.hide">Wachtwoord verbergen</string>
     <string name="audiobookshelf.login.password.show">Wachtwoord tonen</string>
@@ -59,6 +67,11 @@
     <string name="audiobookshelf.status.needs_login">De server wil dat je opnieuw inlogt</string>
     <string name="audiobookshelf.status.offline">De server is nu niet bereikbaar. Gedownloade boeken kun je nog steeds afspelen.</string>
     <string name="audiobookshelf.status.syncing">Synchroniseren…</string>
+    <string name="backup.export">Exporteren naar bestand</string>
+    <string name="backup.export_done">Opgeslagen</string>
+    <string name="backup.import">Importeren uit bestand</string>
+    <string name="backup.import_failed">Dat bestand is geen back-up van Voice.</string>
+    <string name="backup.subtitle">Bewaart je plek en je bladwijzers in een bestand dat je zelf beheert. De audiobestanden zelf zitten er niet in.</string>
     <string name="book.category.action.mark_completed">Markeren als afgerond</string>
     <string name="book.category.action.mark_current">Markeren als huidig boek</string>
     <string name="book.category.action.mark_not_started">Markeren als nog niet aan begonnen</string>
@@ -350,6 +363,8 @@
     <string name="settings.auto_sleep_timer.summary">Start automatisch een slaaptimer wanneer het afspelen begint tussen %1$s en %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatische Slaaptimer</string>
     <string name="settings.library.audiobookshelf.summary">Stream de boeken op je eigen server</string>
+    <string name="settings.library.backup.summary">Sla je voortgang en bladwijzers op in een bestand</string>
+    <string name="settings.library.backup.title">Back-up</string>
     <string name="settings.library.folders.summary">Beheer mappen die op luisterboeken worden gescand</string>
     <string name="settings.library.layout.grid">Raster</string>
     <string name="settings.library.layout.list">Lijst</string>

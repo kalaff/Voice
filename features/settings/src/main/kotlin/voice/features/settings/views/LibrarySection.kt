@@ -72,6 +72,7 @@ internal fun LibrarySection(
   useGrid: Boolean,
   onFoldersClick: () -> Unit,
   onAudiobookshelfClick: () -> Unit,
+  onBackupClick: () -> Unit,
   onUseGridChange: (Boolean) -> Unit,
   modifier: Modifier = Modifier,
 ) {
@@ -100,6 +101,7 @@ internal fun LibrarySection(
     if (showAudiobookshelf) {
       AudiobookshelfRow(audiobookshelfServer, onAudiobookshelfClick)
     }
+    BackupRow(onBackupClick)
     Spacer(Modifier.height(12.dp))
     Row(
       modifier = Modifier
@@ -378,6 +380,25 @@ private fun AudiobookshelfRow(
       } else {
         Text(stringResource(StringsR.string.settings_library_audiobookshelf_summary))
       }
+    },
+  )
+}
+
+@Composable
+private fun BackupRow(onClick: () -> Unit) {
+  IslandRow(
+    title = stringResource(StringsR.string.settings_library_backup_title),
+    onClick = onClick,
+    leading = {
+      ShapedIcon(
+        icon = VoiceIcons.Download,
+        shape = MaterialShapes.Flower,
+        containerColor = MaterialTheme.colorScheme.tertiary,
+        contentColor = MaterialTheme.colorScheme.onTertiary,
+      )
+    },
+    summary = {
+      Text(stringResource(StringsR.string.settings_library_backup_summary))
     },
   )
 }

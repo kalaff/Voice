@@ -41,6 +41,16 @@
         <item quantity="many">%1$s · %2$d livres</item>
         <item quantity="other">%1$s · %2$d livres</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d livre et %2$d marque-pages restaurés</item>
+        <item quantity="many">%1$d livres et %2$d marque-pages restaurés</item>
+        <item quantity="other">%1$d livres et %2$d marque-pages restaurés</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d livre n\'était pas dans cette bibliothèque</item>
+        <item quantity="many">%1$d livres n\'étaient pas dans cette bibliothèque</item>
+        <item quantity="other">%1$d livres n\'étaient pas dans cette bibliothèque</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Mot de passe</string>
     <string name="audiobookshelf.login.password.hide">Masquer le mot de passe</string>
     <string name="audiobookshelf.login.password.show">Afficher le mot de passe</string>
@@ -62,6 +72,11 @@
     <string name="audiobookshelf.status.needs_login">Le serveur vous demande de vous reconnecter</string>
     <string name="audiobookshelf.status.offline">Impossible de joindre le serveur pour le moment. Vous pouvez toujours écouter les livres téléchargés.</string>
     <string name="audiobookshelf.status.syncing">Synchronisation…</string>
+    <string name="backup.export">Exporter dans un fichier</string>
+    <string name="backup.export_done">Enregistré</string>
+    <string name="backup.import">Importer depuis un fichier</string>
+    <string name="backup.import_failed">Ce fichier n\'est pas une sauvegarde Voice.</string>
+    <string name="backup.subtitle">Garde votre position et vos marque-pages dans un fichier que vous contrôlez. Les fichiers audio eux-mêmes n\'en font pas partie.</string>
     <string name="book.category.action.mark_completed">Marquer comme Terminé</string>
     <string name="book.category.action.mark_current">Marquer comme En cours</string>
     <string name="book.category.action.mark_not_started">Marquer comme Non commencé</string>
@@ -366,6 +381,8 @@
     <string name="settings.auto_sleep_timer.summary">Démarrer automatiquement le minuteur de veille lorsque la lecture commence entre %1$s et %2$s</string>
     <string name="settings.auto_sleep_timer.title">Minuteur de veille automatique</string>
     <string name="settings.library.audiobookshelf.summary">Écoutez les livres de votre propre serveur</string>
+    <string name="settings.library.backup.summary">Enregistrez votre progression et vos marque-pages dans un fichier</string>
+    <string name="settings.library.backup.title">Sauvegarde</string>
     <string name="settings.library.folders.summary">Gérer les dossiers analysés pour les livres audio</string>
     <string name="settings.library.layout.grid">Grille</string>
     <string name="settings.library.layout.list">Liste</string>

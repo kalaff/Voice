@@ -41,6 +41,16 @@
         <item quantity="few">%1$s · %2$d cărți</item>
         <item quantity="other">%1$s · %2$d de cărți</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d carte și %2$d semn de carte restaurate</item>
+        <item quantity="few">%1$d cărți și %2$d semne de carte restaurate</item>
+        <item quantity="other">%1$d de cărți și %2$d de semne de carte restaurate</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d carte nu era în această bibliotecă</item>
+        <item quantity="few">%1$d cărți nu erau în această bibliotecă</item>
+        <item quantity="other">%1$d de cărți nu erau în această bibliotecă</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Parolă</string>
     <string name="audiobookshelf.login.password.hide">Ascunde parola</string>
     <string name="audiobookshelf.login.password.show">Afișează parola</string>
@@ -62,6 +72,11 @@
     <string name="audiobookshelf.status.needs_login">Serverul îți cere să te conectezi din nou</string>
     <string name="audiobookshelf.status.offline">Serverul nu poate fi contactat acum. Poți asculta în continuare cărțile descărcate.</string>
     <string name="audiobookshelf.status.syncing">Se sincronizează…</string>
+    <string name="backup.export">Exportă în fișier</string>
+    <string name="backup.export_done">Salvat</string>
+    <string name="backup.import">Importă din fișier</string>
+    <string name="backup.import_failed">Acel fișier nu este o copie de rezervă Voice.</string>
+    <string name="backup.subtitle">Îți păstrează locul și semnele de carte într-un fișier pe care îl controlezi. Fișierele audio în sine nu fac parte din el.</string>
     <string name="book.category.action.mark_completed">Marchează ca terminată</string>
     <string name="book.category.action.mark_current">Marchează ca fiind curentă</string>
     <string name="book.category.action.mark_not_started">Marchează ca neîncepută încă</string>
@@ -366,6 +381,8 @@
     <string name="settings.auto_sleep_timer.summary">Pornește automat oprirea temporizată când redarea începe între %1$s și %2$s</string>
     <string name="settings.auto_sleep_timer.title">Oprire temporizată automată</string>
     <string name="settings.library.audiobookshelf.summary">Ascultă cărțile de pe serverul tău</string>
+    <string name="settings.library.backup.summary">Salvează-ți progresul și semnele de carte într-un fișier</string>
+    <string name="settings.library.backup.title">Copie de rezervă</string>
     <string name="settings.library.folders.summary">Gestionează directoarele scanate pentru cărți audio</string>
     <string name="settings.library.layout.grid">Grilă</string>
     <string name="settings.library.layout.list">Listă</string>

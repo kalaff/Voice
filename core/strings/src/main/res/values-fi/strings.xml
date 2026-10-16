@@ -38,6 +38,14 @@
         <item quantity="one">%1$s · %2$d kirja</item>
         <item quantity="other">%1$s · %2$d kirjaa</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d kirja ja %2$d kirjanmerkki palautettu</item>
+        <item quantity="other">%1$d kirjaa ja %2$d kirjanmerkkiä palautettu</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d kirja ei ollut tässä kirjastossa</item>
+        <item quantity="other">%1$d kirjaa ei ollut tässä kirjastossa</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Salasana</string>
     <string name="audiobookshelf.login.password.hide">Piilota salasana</string>
     <string name="audiobookshelf.login.password.show">Näytä salasana</string>
@@ -59,6 +67,11 @@
     <string name="audiobookshelf.status.needs_login">Palvelin pyytää sinua kirjautumaan uudelleen</string>
     <string name="audiobookshelf.status.offline">Palvelimeen ei saada nyt yhteyttä. Ladattuja kirjoja voit silti kuunnella.</string>
     <string name="audiobookshelf.status.syncing">Synkronoidaan…</string>
+    <string name="backup.export">Vie tiedostoon</string>
+    <string name="backup.export_done">Tallennettu</string>
+    <string name="backup.import">Tuo tiedostosta</string>
+    <string name="backup.import_failed">Tuo tiedosto ei ole Voice-varmuuskopio.</string>
+    <string name="backup.subtitle">Pitää kuuntelukohtasi ja kirjanmerkkisi tiedostossa, jota itse hallitset. Äänitiedostot eivät kuulu siihen.</string>
     <string name="book.category.action.mark_completed">Merkitse valmiiksi</string>
     <string name="book.category.action.mark_current">Merkitse nykyiseksi</string>
     <string name="book.category.action.mark_not_started">Merkitse ei vielä aloitetuksi</string>
@@ -350,6 +363,8 @@
     <string name="settings.auto_sleep_timer.summary">Aloita uniajastin automaattisesti, kun toisto alkaa välillä %1$s ja %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automaattinen uniajastin</string>
     <string name="settings.library.audiobookshelf.summary">Suoratoista kirjoja omalta palvelimeltasi</string>
+    <string name="settings.library.backup.summary">Tallenna kuuntelukohtasi ja kirjanmerkkisi tiedostoon</string>
+    <string name="settings.library.backup.title">Varmuuskopio</string>
     <string name="settings.library.folders.summary">Hallitse kansioita, joista etsitään äänikirjoja</string>
     <string name="settings.library.layout.grid">Ruudukko</string>
     <string name="settings.library.layout.list">Luettelo</string>

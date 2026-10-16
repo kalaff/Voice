@@ -38,6 +38,14 @@
         <item quantity="one">%1$s · %2$d kitap</item>
         <item quantity="other">%1$s · %2$d kitap</item>
     </plurals>
+    <plurals name="backup.import.restored">
+        <item quantity="one">%1$d kitap ve %2$d yer imi geri yüklendi</item>
+        <item quantity="other">%1$d kitap ve %2$d yer imi geri yüklendi</item>
+    </plurals>
+    <plurals name="backup.import.not_found">
+        <item quantity="one">%1$d kitap bu kitaplıkta yoktu</item>
+        <item quantity="other">%1$d kitap bu kitaplıkta yoktu</item>
+    </plurals>
     <string name="audiobookshelf.login.password">Şifre</string>
     <string name="audiobookshelf.login.password.hide">Şifreyi gizle</string>
     <string name="audiobookshelf.login.password.show">Şifreyi göster</string>
@@ -59,6 +67,11 @@
     <string name="audiobookshelf.status.needs_login">Sunucu yeniden oturum açmanızı istiyor</string>
     <string name="audiobookshelf.status.offline">Sunucuya şu anda ulaşılamıyor. İndirilen kitaplar yine de oynatılabilir.</string>
     <string name="audiobookshelf.status.syncing">Eşitleniyor…</string>
+    <string name="backup.export">Dosyaya aktar</string>
+    <string name="backup.export_done">Kaydedildi</string>
+    <string name="backup.import">Dosyadan içe aktar</string>
+    <string name="backup.import_failed">Bu dosya bir Voice yedeği değil.</string>
+    <string name="backup.subtitle">Yeriniz ve yer imlerinizi kontrolünüzdeki bir dosyada tutar. Ses dosyalarının kendisi bunun parçası değildir.</string>
     <string name="book.category.action.mark_completed">Tamamlandı olarak işaretle</string>
     <string name="book.category.action.mark_current">Geçerli olan olarak işaretle</string>
     <string name="book.category.action.mark_not_started">Henüz başlamadı olarak işaretle</string>
@@ -350,6 +363,8 @@
     <string name="settings.auto_sleep_timer.summary">Eğer oynatıcı saat %1$s ile %2$s arasında başlatılırsa otomatik olarak bir uyku zamanlayıcısı başlat</string>
     <string name="settings.auto_sleep_timer.title">Otomatik Uyku Zamanlayıcısı</string>
     <string name="settings.library.audiobookshelf.summary">Kendi sunucunuzdaki kitapları akışla dinleyin</string>
+    <string name="settings.library.backup.summary">İlerlemenizi ve yer imlerinizi bir dosyaya kaydedin</string>
+    <string name="settings.library.backup.title">Yedek</string>
     <string name="settings.library.folders.summary">Sesli kitaplar için taranan dizinleri yönetin</string>
     <string name="settings.library.layout.grid">Izgara</string>
     <string name="settings.library.layout.list">Liste</string>
