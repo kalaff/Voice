@@ -617,6 +617,10 @@
     <string name="settings.playback.lock_screen_slider.summary">Drag through the chapter from the lock screen and notification. Turn it off so a stray touch can\'t lose your place.</string>
     <!-- Title for the setting that lets the listener drag the progress slider in the media notification and on the lock screen. -->
     <string name="settings.playback.lock_screen_slider.title">Lock screen slider</string>
+    <!-- Summary of the switch that turns off audio focus handling, so Voice keeps playing when another app makes sound. -->
+    <string name="settings.playback.play_together.summary">Keep playing when another app makes sound. Calls and alarms won\'t pause Voice either.</string>
+    <!-- Title of the switch that turns off audio focus handling, so Voice keeps playing when another app makes sound. -->
+    <string name="settings.playback.play_together.title">Play together with other apps</string>
     <!-- Explains the skip amount setting. -->
     <string name="settings.playback.seek_time.summary">How far rewind and fast forward jump</string>
     <!-- Title for the setting that controls skip-forward and rewind duration. -->

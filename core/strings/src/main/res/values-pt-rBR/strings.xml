@@ -373,6 +373,8 @@
     <string name="settings.playback.auto_rewind.title">Retrocesso automático</string>
     <string name="settings.playback.lock_screen_slider.summary">Avance ou volte no capítulo pela tela de bloqueio e pela notificação. Desative para que um toque sem querer não faça você perder onde parou.</string>
     <string name="settings.playback.lock_screen_slider.title">Barra na tela de bloqueio</string>
+    <string name="settings.playback.play_together.summary">Continua reproduzindo quando outro app fizer som. Chamadas e alarmes também não pausam o Voice.</string>
+    <string name="settings.playback.play_together.title">Reproduzir junto com outros apps</string>
     <string name="settings.playback.seek_time.summary">Quanto voltar e avançar pulam</string>
     <string name="settings.playback.seek_time.title">Quantidade de Salto</string>
     <string name="settings.subtitle">Deixe o Voice do seu jeito</string>

@@ -59,6 +59,7 @@ class SettingsViewModelTest {
   private val autoRewindAmountStore = MemoryDataStore(10)
   private val seekTimeStore = MemoryDataStore(30)
   private val lockScreenSliderStore = MemoryDataStore(true)
+  private val playTogetherStore = MemoryDataStore(false)
   private val gridModeStore = MemoryDataStore(GridMode.GRID)
   private val sleepTimerPreferenceStore = MemoryDataStore(SleepTimerPreference.Default)
   private val analyticsConsentStore = MemoryDataStore(false)
@@ -95,6 +96,7 @@ class SettingsViewModelTest {
     autoRewindAmountStore = autoRewindAmountStore,
     seekTimeStore = seekTimeStore,
     lockScreenSliderStore = lockScreenSliderStore,
+    playTogetherStore = playTogetherStore,
     navigator = navigator,
     appInfoProvider = appInfoProvider,
     gridModeStore = gridModeStore,
@@ -455,6 +457,22 @@ class SettingsViewModelTest {
 
       viewModel.toggleLockScreenSlider()
       assertTrue(awaitItem().lockScreenSlider)
+    }
+  }
+
+  @Test
+  fun `playing together with other apps can be turned on and off again`() = scope.runTest {
+    backgroundScope.launchMolecule(RecompositionMode.Immediate) {
+      viewModel.viewState()
+    }.filterNotNull().test {
+      assertFalse(awaitItem().playTogether)
+
+      viewModel.togglePlayTogether()
+      assertTrue(awaitItem().playTogether)
+      assertTrue(playTogetherStore.data.first())
+
+      viewModel.togglePlayTogether()
+      assertFalse(awaitItem().playTogether)
     }
   }
 }

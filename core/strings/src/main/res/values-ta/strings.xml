@@ -357,6 +357,8 @@
     <string name="settings.playback.auto_rewind.title">ஆட்டோ ரிவைண்ட்</string>
     <string name="settings.playback.lock_screen_slider.summary">பூட்டுத் திரையிலும் அறிவிப்பிலும் அத்தியாயத்தில் முன்னும் பின்னும் செல்லலாம். தவறுதலாகத் தொட்டாலும் நீங்கள் கேட்ட இடம் மாறாமல் இருக்க இதை முடக்கவும்.</string>
     <string name="settings.playback.lock_screen_slider.title">பூட்டுத் திரை ஸ்லைடர்</string>
+    <string name="settings.playback.play_together.summary">மற்றொரு பயன்பாட்டிலிருந்து ஒலி வந்தாலும் தொடர்ந்து இயங்கும். அழைப்புகளுக்கும் அலாரங்களுக்கும் கூட Voice இடைநிறுத்தப்படாது.</string>
+    <string name="settings.playback.play_together.title">பிற பயன்பாடுகளுடன் இணைந்து இயக்கு</string>
     <string name="settings.playback.seek_time.summary">பின்னோக்கியும் முன்னோக்கியும் எவ்வளவு தாவும்</string>
     <string name="settings.playback.seek_time.title">தொகையைத் தவிர்க்கவும்</string>
     <string name="settings.subtitle">Voice-ஐ உங்களுடையதாக்குங்கள்</string>

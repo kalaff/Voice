@@ -68,3 +68,6 @@ public annotation class LastPlaybackSpeedStore
 
 @Qualifier
 public annotation class LockScreenSliderStore
+
+@Qualifier
+public annotation class PlayTogetherStore

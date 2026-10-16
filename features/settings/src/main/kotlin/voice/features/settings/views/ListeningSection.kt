@@ -99,6 +99,8 @@ internal fun ListeningSection(
   onAutoRewindStep: (Int) -> Unit,
   lockScreenSlider: Boolean,
   onLockScreenSliderToggle: () -> Unit,
+  playTogether: Boolean,
+  onPlayTogetherToggle: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
   SettingsIsland(
@@ -141,6 +143,21 @@ internal fun ListeningSection(
         )
       },
       summary = { Text(stringResource(StringsR.string.settings_playback_lock_screen_slider_summary)) },
+    )
+    Spacer(Modifier.height(20.dp))
+    IslandSwitchRow(
+      title = stringResource(StringsR.string.settings_playback_play_together_title),
+      checked = playTogether,
+      onCheckedChange = { onPlayTogetherToggle() },
+      leading = {
+        ShapedIcon(
+          icon = VoiceIcons.Devices,
+          shape = MaterialShapes.Clover4Leaf,
+          containerColor = MaterialTheme.colorScheme.secondary,
+          contentColor = MaterialTheme.colorScheme.onSecondary,
+        )
+      },
+      summary = { Text(stringResource(StringsR.string.settings_playback_play_together_summary)) },
     )
   }
 }

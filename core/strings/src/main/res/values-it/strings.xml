@@ -373,6 +373,8 @@
     <string name="settings.playback.auto_rewind.title">Riavvolgimento automatico</string>
     <string name="settings.playback.lock_screen_slider.summary">Scorri il capitolo dalla schermata di blocco e dalla notifica. Disattivalo perché un tocco accidentale non ti faccia perdere il segno.</string>
     <string name="settings.playback.lock_screen_slider.title">Cursore nella schermata di blocco</string>
+    <string name="settings.playback.play_together.summary">Continua a riprodurre quando un\'altra app emette suono. Anche le chiamate e le sveglie non metteranno in pausa Voice.</string>
+    <string name="settings.playback.play_together.title">Riproduci insieme ad altre app</string>
     <string name="settings.playback.seek_time.summary">Di quanto saltano il riavvolgimento e l\'avanzamento veloce</string>
     <string name="settings.playback.seek_time.title">Salta tempo</string>
     <string name="settings.subtitle">Rendi Voice tuo</string>

@@ -189,6 +189,8 @@ private fun LazyListScope.sections(
       onAutoRewindStep = listener::autoRewindAmountStepped,
       lockScreenSlider = viewState.lockScreenSlider,
       onLockScreenSliderToggle = listener::toggleLockScreenSlider,
+      playTogether = viewState.playTogether,
+      onPlayTogetherToggle = listener::togglePlayTogether,
     )
   }
   section("sleepTimer") { modifier ->
