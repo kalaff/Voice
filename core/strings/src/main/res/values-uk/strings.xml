@@ -329,6 +329,8 @@
     <string name="playback.jump_back.chapter">Повернутися до розд. %1$d · %2$s</string>
     <string name="playback.option.skip_silence">Пропускати тишу</string>
     <string name="playback.option.volume_boost">Збільшення гучності</string>
+    <string name="playback.skip_intro.off">Вимкнено</string>
+    <string name="playback.skip_intro.title">Пропуск вступу розділу</string>
     <string name="playback.speed.decrease">Повільніше</string>
     <string name="playback.speed.increase">Швидше</string>
     <string name="playback.speed.title">Швидкість відтворення</string>

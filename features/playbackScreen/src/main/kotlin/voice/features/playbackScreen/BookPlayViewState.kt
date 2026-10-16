@@ -75,6 +75,8 @@ internal sealed interface BookPlayDialogViewState {
     val overrideEnabled: Boolean = false,
   ) : BookPlayDialogViewState
 
+  data class SkipIntroDialog(val introSkipSeconds: Int) : BookPlayDialogViewState
+
   data class VolumeGainDialog(
     val gain: Decibel,
     val valueFormatted: String,

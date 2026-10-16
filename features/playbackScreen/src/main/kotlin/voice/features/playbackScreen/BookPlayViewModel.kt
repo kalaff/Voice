@@ -383,6 +383,20 @@ class BookPlayViewModel(
     }
   }
 
+  fun onSkipIntroIconClick() {
+    scope.launch {
+      val introSkipSeconds = currentBook()?.content?.introSkipSeconds ?: return@launch
+      dialogState.value = BookPlayDialogViewState.SkipIntroDialog(introSkipSeconds)
+    }
+  }
+
+  fun onIntroSkipChanged(introSkipSeconds: Int) {
+    dialogState.value = BookPlayDialogViewState.SkipIntroDialog(introSkipSeconds)
+    scope.launch {
+      bookRepository.updateBook(bookId) { it.copy(introSkipSeconds = introSkipSeconds) }
+    }
+  }
+
   fun onPlaybackSpeedIconClick() {
     scope.launch {
       val overrideEnabled = globalSpeedOverrideStore.data.first()

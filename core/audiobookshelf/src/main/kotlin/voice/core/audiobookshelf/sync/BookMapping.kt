@@ -83,6 +83,7 @@ internal fun AbsLibraryItem.toBookContent(
     currentChapter = position.chapterId,
     positionInChapter = position.positionInChapter.coerceIn(0, chapters.first { it.id == position.chapterId }.duration),
     gain = existing?.gain ?: 0F,
+    introSkipSeconds = existing?.introSkipSeconds ?: 0,
     metadata = BookMetadata(
       name = metadata.title?.takeIf { it.isNotBlank() } ?: chapters.first().name ?: id,
       author = metadata.authorName?.takeIf { it.isNotBlank() },

@@ -299,6 +299,8 @@
     <string name="playback.jump_back.chapter">Vissza ide: %1$d. fej. · %2$s</string>
     <string name="playback.option.skip_silence">Csend kihagyása</string>
     <string name="playback.option.volume_boost">Hangerőnövelés</string>
+    <string name="playback.skip_intro.off">Ki</string>
+    <string name="playback.skip_intro.title">Fejezet elejének kihagyása</string>
     <string name="playback.speed.decrease">Lassabb</string>
     <string name="playback.speed.increase">Gyorsabb</string>
     <string name="playback.speed.title">Lejátszási sebesség</string>

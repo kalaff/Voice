@@ -79,6 +79,7 @@ fun BookPlayScreen(bookId: BookId) {
       onSleepTimerClick = viewModel::toggleSleepTimer,
       onVolumeBoostClick = viewModel::onVolumeGainIconClick,
       onSpeedChangeClick = viewModel::onPlaybackSpeedIconClick,
+      onSkipIntroClick = viewModel::onSkipIntroIconClick,
       onCloseClick = viewModel::onCloseClick,
       onBookActionsClick = viewModel::onBookActionsClick,
       onSkipToNext = viewModel::next,
@@ -95,6 +96,13 @@ fun BookPlayScreen(bookId: BookId) {
           dialogState = dialogState,
           onSpeedChange = viewModel::onPlaybackSpeedChanged,
           onOverrideToggle = viewModel::onGlobalSpeedToggle,
+          onDismiss = viewModel::dismissDialog,
+        )
+      }
+      is BookPlayDialogViewState.SkipIntroDialog -> {
+        SkipIntroSheet(
+          dialogState = dialogState,
+          onSkipSecondsChange = viewModel::onIntroSkipChanged,
           onDismiss = viewModel::dismissDialog,
         )
       }

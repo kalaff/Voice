@@ -78,6 +78,7 @@ internal fun ActionToolbar(
   volumeBoostActive: Boolean,
   onSleepTimerClick: () -> Unit,
   onSpeedClick: () -> Unit,
+  onSkipIntroClick: () -> Unit,
   onBookmarkClick: () -> Unit,
   onBookmarkLongClick: () -> Unit,
   onSkipSilenceClick: () -> Unit,
@@ -107,6 +108,9 @@ internal fun ActionToolbar(
       contentDescription = stringResource(R.string.playback_speed_title),
       label = if (speedChanged) speedFormat.format(playbackSpeed) + "×" else null,
       onClick = onSpeedClick,
+      // the intro skip belongs to this book, like the speed, and a second gesture keeps the toolbar quiet
+      onLongClick = onSkipIntroClick,
+      onLongClickLabel = stringResource(R.string.playback_skip_intro_title),
     )
     BookmarkAction(
       onClick = onBookmarkClick,

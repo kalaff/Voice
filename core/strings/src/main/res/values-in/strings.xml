@@ -284,6 +284,8 @@
     <string name="playback.jump_back.chapter">Kembali ke Bab %1$d · %2$s</string>
     <string name="playback.option.skip_silence">Lewati Keheningan</string>
     <string name="playback.option.volume_boost">Peningkatan volume</string>
+    <string name="playback.skip_intro.off">Mati</string>
+    <string name="playback.skip_intro.title">Lewati intro bab</string>
     <string name="playback.speed.decrease">Lebih lambat</string>
     <string name="playback.speed.increase">Lebih cepat</string>
     <string name="playback.speed.title">Kecepatan pemutaran</string>

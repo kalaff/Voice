@@ -503,6 +503,10 @@
     <string name="playback.option.skip_silence">Skip Silence</string>
     <!-- Menu and dialog title for changing volume gain. -->
     <string name="playback.option.volume_boost">Volume boost</string>
+    <!-- Preset and big value when nothing is skipped at the start of a chapter. -->
+    <string name="playback.skip_intro.off">Off</string>
+    <!-- Title of the sheet that sets how many seconds to skip at the start of every chapter, opened by long-pressing the speed button. -->
+    <string name="playback.skip_intro.title">Chapter intro skip</string>
     <!-- Content description for lowering the playback speed by a small step. -->
     <string name="playback.speed.decrease">Slower</string>
     <!-- Content description for raising the playback speed by a small step. -->

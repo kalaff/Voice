@@ -55,6 +55,7 @@ internal class ProgressCarryOver(
       playbackSpeed = source.playbackSpeed,
       skipSilence = source.skipSilence,
       gain = source.gain,
+      introSkipSeconds = source.introSkipSeconds,
     )
   }
 
